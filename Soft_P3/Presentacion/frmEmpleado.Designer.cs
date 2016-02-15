@@ -152,7 +152,7 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Font = new System.Drawing.Font("Bell MT", 11F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 192);
             this.groupBox1.Name = "groupBox1";
@@ -187,7 +187,7 @@
             "Nombre"});
             this.comboBox1.Location = new System.Drawing.Point(6, 41);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(163, 32);
+            this.comboBox1.Size = new System.Drawing.Size(163, 30);
             this.comboBox1.TabIndex = 56;
             this.comboBox1.Text = "ID Empleado";
             // 
