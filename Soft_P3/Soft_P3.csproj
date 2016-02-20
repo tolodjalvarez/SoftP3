@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="conexion.cs" />
+    <Compile Include="Entidades\Categoria.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Presentacion\frmArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +197,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow_87px_1199201_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Datos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
