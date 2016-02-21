@@ -18,3 +18,6 @@ C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Presentacion.frmCompania.resourc
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Presentacion.frmEmpleado.resources
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Presentacion.frmFacturaVenta.resources
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Presentacion.FrmMenu.resources
+C:\Users\manuel\Documents\GitHub\SoftP3\Soft_P3\bin\Debug\Soft_P3.exe.config
+C:\Users\manuel\Documents\GitHub\SoftP3\Soft_P3\obj\Debug\Soft_P3.exe
+C:\Users\manuel\Documents\GitHub\SoftP3\Soft_P3\obj\Debug\Soft_P3.pdb
