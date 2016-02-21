@@ -17,3 +17,4 @@ C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Properties.Resources.resources
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.csproj.GenerateResource.Cache
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.exe
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.pdb
+C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.csprojResolveAssemblyReference.cache
