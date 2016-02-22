@@ -12,7 +12,7 @@ namespace Soft_P3
         public static SqlConnection ObtenerConexion()
         {
 
-            SqlConnection conectar = new SqlConnection(@"Data Source=JIMROD-PC;Initial Catalog=SoftP3;Integrated Security=True");
+            SqlConnection conectar = new SqlConnection(@"Data Source=local;Initial Catalog=SoftP3;Integrated Security=True");
 
             conectar.Open();
             return conectar;
