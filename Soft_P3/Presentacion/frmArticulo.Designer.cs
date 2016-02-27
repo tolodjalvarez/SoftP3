@@ -58,11 +58,15 @@
             this.txtDescCat = new System.Windows.Forms.TextBox();
             this.txtIdCat = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txCodArt = new System.Windows.Forms.TextBox();
+            this.txtCodArt = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtProveedor = new System.Windows.Forms.TextBox();
+            this.txtIdProveedor = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
@@ -114,6 +118,10 @@
             this.dgvArticulos.RowTemplate.Height = 24;
             this.dgvArticulos.Size = new System.Drawing.Size(1366, 268);
             this.dgvArticulos.TabIndex = 4;
+            this.dgvArticulos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellClick);
+            this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
+            this.dgvArticulos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentDoubleClick);
+            this.dgvArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellDoubleClick);
             // 
             // txtBuscarArti
             // 
@@ -387,14 +395,14 @@
             this.txtDescripcion.Size = new System.Drawing.Size(233, 30);
             this.txtDescripcion.TabIndex = 29;
             // 
-            // txCodArt
+            // txtCodArt
             // 
-            this.txCodArt.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txCodArt.Location = new System.Drawing.Point(200, 116);
-            this.txCodArt.Margin = new System.Windows.Forms.Padding(4);
-            this.txCodArt.Name = "txCodArt";
-            this.txCodArt.Size = new System.Drawing.Size(233, 30);
-            this.txCodArt.TabIndex = 21;
+            this.txtCodArt.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.txtCodArt.Location = new System.Drawing.Point(200, 116);
+            this.txtCodArt.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodArt.Name = "txtCodArt";
+            this.txtCodArt.Size = new System.Drawing.Size(233, 30);
+            this.txtCodArt.TabIndex = 21;
             // 
             // btnCancelar
             // 
@@ -407,6 +415,7 @@
             this.btnCancelar.TabIndex = 48;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -419,6 +428,7 @@
             this.btnGuardar.TabIndex = 45;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEditar
             // 
@@ -446,12 +456,59 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Aqua;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(941, 243);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 29);
+            this.button1.TabIndex = 55;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(517, 246);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(102, 24);
+            this.label14.TabIndex = 54;
+            this.label14.Text = "Proveedor";
+            // 
+            // txtProveedor
+            // 
+            this.txtProveedor.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.txtProveedor.Location = new System.Drawing.Point(767, 243);
+            this.txtProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.Size = new System.Drawing.Size(167, 30);
+            this.txtProveedor.TabIndex = 53;
+            // 
+            // txtIdProveedor
+            // 
+            this.txtIdProveedor.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.txtIdProveedor.Location = new System.Drawing.Point(701, 243);
+            this.txtIdProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdProveedor.Name = "txtIdProveedor";
+            this.txtIdProveedor.Size = new System.Drawing.Size(58, 30);
+            this.txtIdProveedor.TabIndex = 52;
+            // 
             // frmArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1409, 763);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtProveedor);
+            this.Controls.Add(this.txtIdProveedor);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox1);
@@ -482,7 +539,7 @@
             this.Controls.Add(this.txtDescCat);
             this.Controls.Add(this.txtIdCat);
             this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txCodArt);
+            this.Controls.Add(this.txtCodArt);
             this.Name = "frmArticulo";
             this.Text = "frmArticulo";
             this.Load += new System.EventHandler(this.frmArticulo_Load);
@@ -525,11 +582,15 @@
         private System.Windows.Forms.TextBox txtDescCat;
         private System.Windows.Forms.TextBox txtIdCat;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txCodArt;
+        private System.Windows.Forms.TextBox txtCodArt;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtProveedor;
+        private System.Windows.Forms.TextBox txtIdProveedor;
     }
 }

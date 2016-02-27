@@ -9,18 +9,84 @@ namespace Soft_P3.Entidades
 {
     class Articulo
     {
-        public int Id { get; private set; }
-        public string DescArt { get; private set; }
-        public double PrecioVenta { get; private set; }
-        public int Existencia { get; private set; }
-        public int Entrada { get; private set; }
-        public int Salida { get; private set; }
-        public Categoria Categoria1 { get; private set; }
-        public string Ubicacion { get; private set; }
-        public int Maximo { get; private set; }
-        public int Minimo { get; private set; }
-        public double CostUnitario { get; private set; }
-        public Proveedor nProveedor { get; private set; }
+        public int id;
+        public string descArt;
+        public double precioVenta;
+        public int existencia;
+        public int entrada;
+        public int salida;
+        public Categoria categoria1;
+        public string ubicacion;
+        public int maximo;
+        public int minimo;
+        public double costUnitario;
+        public Proveedor nProveedor;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public string DescArt
+        {
+            get { return descArt; }
+            set { descArt = value; }
+        }
+
+        public double PrecioVenta
+        {
+            get { return precioVenta; }
+            set { precioVenta = value; }
+        }
+
+        public int Existencia
+        {
+            get { return existencia; }
+            set { existencia = value; }
+        }
+
+        public int Entrada
+        {
+            get { return entrada; }
+            set { entrada = value; }
+        }
+
+        public int Salida
+        {
+            get { return salida; }
+            set { salida = value; }
+        }
+
+        public Categoria Categoria1
+        {
+            get { return categoria1; }
+            set { categoria1 = value; }
+        }
+
+        public string Ubicacion
+        {
+            get { return ubicacion; }
+            set { ubicacion = value; }
+        }
+
+        public int Maximo
+        {
+            get { return maximo; }
+            set { maximo = value; }
+        }
+
+        public int Minimo
+        {
+            get { return minimo; }
+            set { minimo = value; }
+        }
+
+        public double CostUnitario
+        {
+            get { return costUnitario; }
+            set { costUnitario = value; }
+        }
 
         public Articulo()
         {

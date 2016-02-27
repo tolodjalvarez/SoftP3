@@ -12,7 +12,7 @@ namespace Soft_P3.Datos
 {
     class Farticulo
     {
-        public void Articulos(DataGridView datos)
+        public void ListarArticulos(DataGridView datos)
         {
             string consulta = "usp_Data_FArticulo_All";
 

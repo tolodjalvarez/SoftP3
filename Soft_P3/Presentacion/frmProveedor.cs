@@ -21,6 +21,10 @@ namespace Soft_P3.Presentacion
         {
             InitializeComponent();
         }
+        public void SetFlag(string valor)
+        {
+            txtFlag.Text = valor;
+        }
 
         private void frmProveedor_Load(object sender, EventArgs e)
         {
@@ -228,6 +232,22 @@ namespace Soft_P3.Presentacion
             {
 
                 MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (txtFlag.Text == "1")
+            {
+
+                frmArticulo Art = frmArticulo.GetInstancia();
+                if (dataGridView1.CurrentRow != null)
+                {
+                    Art.SetCategoria(dataGridView1.CurrentRow.Cells[1].Value.ToString(),
+                        dataGridView1.CurrentRow.Cells[2].Value.ToString());
+                    Art.Show();
+                    Close();
+                }
             }
         }
     }

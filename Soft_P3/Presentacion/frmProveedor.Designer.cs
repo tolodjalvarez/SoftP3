@@ -53,6 +53,7 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.txtFlag = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -143,6 +144,7 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // txtBuscar
             // 
@@ -343,6 +345,17 @@
             this.txtId.Size = new System.Drawing.Size(233, 30);
             this.txtId.TabIndex = 20;
             // 
+            // txtFlag
+            // 
+            this.txtFlag.Enabled = false;
+            this.txtFlag.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.txtFlag.Location = new System.Drawing.Point(621, 13);
+            this.txtFlag.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFlag.Name = "txtFlag";
+            this.txtFlag.Size = new System.Drawing.Size(54, 30);
+            this.txtFlag.TabIndex = 34;
+            this.txtFlag.Visible = false;
+            // 
             // frmProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -359,6 +372,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtFlag);
             this.Controls.Add(this.txtRNC);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -408,5 +422,6 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtFlag;
     }
 }
