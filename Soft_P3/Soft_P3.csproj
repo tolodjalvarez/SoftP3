@@ -45,10 +45,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.cs" />
+    <Compile Include="Datos\Farticulo.cs" />
     <Compile Include="Datos\Fcategoria.cs" />
+    <Compile Include="Datos\Fcliente.cs" />
+    <Compile Include="Datos\Fproveedor.cs" />
     <Compile Include="Entidades\Articulo.cs" />
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\Proveedor.cs" />
     <Compile Include="Presentacion\frmArticulo.cs">
       <SubType>Form</SubType>
     </Compile>

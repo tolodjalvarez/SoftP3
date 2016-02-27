@@ -14,23 +14,24 @@ namespace Soft_P3.Datos
     {
         public void Lista(DataGridView data)
         {
-            string consulta = "select * from Categoria";
+            string consulta = "usp_Data_FCategoria_GetAll";
 
-            SqlCommand comando =new SqlCommand(consulta,conexion.ObtenerConexion());
+            SqlCommand comando = new SqlCommand(consulta, conexion.ObtenerConexion());
             comando.Connection = conexion.ObtenerConexion();
             comando.ExecuteNonQuery();
             DataTable dt = new DataTable();
-            SqlDataAdapter da =new SqlDataAdapter(consulta,conexion.ObtenerConexion());
+            SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(dt);
             data.DataSource = dt;
         }
+
 
         public static bool Agregar(Categoria categoria)
         {
             SqlCommand sql = new SqlCommand("usp_Data_FCategoria_Insert",conexion.ObtenerConexion());
             sql.CommandType= CommandType.StoredProcedure;
 
-            sql.Parameters.Add("@Descripcion", SqlDbType.VarChar, 100).Value = categoria.Descripcion;
+            sql.Parameters.Add("@Descripcion", SqlDbType.VarChar, 0).Value = categoria.Descripcion;
 
 
             try
@@ -47,14 +48,14 @@ namespace Soft_P3.Datos
 
         public static int Actualizar(Categoria categoria)
         {
-            SqlCommand sql = new SqlCommand("usp_Data_FCategoria_Actualizar");
+            SqlCommand sql = new SqlCommand("usp_Data_FCategoria_Actualizar",conexion.ObtenerConexion());
             sql.CommandType = CommandType.StoredProcedure;
 
-            sql.Parameters.Add("@Id", SqlDbType.Int, 0).Value = categoria.Id;
-            sql.Parameters.Add("@Descripcion", SqlDbType.VarChar, 100).Value = categoria.Descripcion;
+            sql.Parameters.AddWithValue("@Id",categoria.Id);
+            sql.Parameters.AddWithValue("@Descripcion", categoria.Descripcion);
 
-            return Convert.ToInt32(sql);
-            
+            int resul = sql.ExecuteNonQuery();
+            return Convert.ToInt32(resul > 0);
 
         }
 
@@ -63,7 +64,9 @@ namespace Soft_P3.Datos
             SqlCommand sql = new SqlCommand("usp_Data_FCategoria_Borrar");
             sql.CommandType=CommandType.StoredProcedure;
 
-            sql.Parameters.Add("@Id", SqlDbType.Int, 0).Value = categoria.Id;
+            sql.Parameters.AddWithValue("@Id", categoria.Id);
+            int resul = sql.ExecuteNonQuery();
+            return Convert.ToInt32(resul > 0);
 
             //try
             //{
@@ -75,7 +78,7 @@ namespace Soft_P3.Datos
             //    return false;
 
             //}
-            return Convert.ToInt32(sql);
+            //return Convert.ToInt32(sql);
         }
     }
 }

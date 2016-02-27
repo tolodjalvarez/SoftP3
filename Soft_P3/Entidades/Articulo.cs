@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Soft_P3.Presentacion;
 
 namespace Soft_P3.Entidades
 {
@@ -19,15 +20,17 @@ namespace Soft_P3.Entidades
         public int Maximo { get; private set; }
         public int Minimo { get; private set; }
         public double CostUnitario { get; private set; }
-        public string Proveedor { get; private set; }
+        public Proveedor nProveedor { get; private set; }
 
         public Articulo()
         {
             Categoria1 = new Categoria();
+            nProveedor = new Proveedor();
+
         }
 
         public Articulo(int id,string descArt,double precioVenta,int existencia,
-            int entrada,int salida,Categoria categoria,string ubicacion,int maximo,int minimo,double costoUnitario,string proveedor)
+            int entrada,int salida,Categoria categoria,string ubicacion,int maximo,int minimo,double costoUnitario,Proveedor proveedor)
         {
             Id = id;
             Categoria1 = categoria;
@@ -40,7 +43,7 @@ namespace Soft_P3.Entidades
             Maximo = maximo;
             Minimo = minimo;
             CostUnitario = costoUnitario;
-            Proveedor = proveedor;
+            nProveedor = proveedor;
         }
     }
 
