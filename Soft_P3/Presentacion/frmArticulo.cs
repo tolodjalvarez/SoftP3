@@ -21,20 +21,32 @@ namespace Soft_P3.Presentacion
             InitializeComponent();
         }
 
-        public static frmArticulo GetInstancia()
+        public static frmArticulo GetInstance()
         {
             if (_instancia==null)
                 _instancia=new frmArticulo();
             return _instancia;
             
         }
+
+        public void SetFlag(string svalor)
+        {
+            txtFlag.Text = svalor;
+        }
         public void SetCategoria(string id, string descripcion)
         {
             txtIdCat.Text = id;
             txtDescCat.Text = descripcion;
         }
+
+        public void SetProveedor(string id, string nombre)
+        {
+            txtIdProveedor.Text = id;
+            txtProveedor.Text = nombre;
+        }
         private void frmArticulo_Load(object sender, EventArgs e)
         {
+            
             var aux = new Farticulo();
             aux.ListarArticulos(dgvArticulos);
             dgvArticulos.AllowUserToAddRows = false;
@@ -49,7 +61,7 @@ namespace Soft_P3.Presentacion
         public string ValidarDatos()
         {
             string Resultados = "";
-            if (txtDescripcion.Text == "")
+            if (txtNombre.Text == "")
             {
                 Resultados = Resultados + "Descripcion \n";
             }
@@ -57,29 +69,18 @@ namespace Soft_P3.Presentacion
             {
                 Resultados = Resultados + "Descripcion Categoria \n";
             }
-            if (txtUbicacion.Text == "")
-            {
-                Resultados = Resultados + "Ubicacion\n";
-            }
+            
 
-            if (txtMax.Text == "")
+            if (txtMin.Text == "")
             {
                 Resultados = Resultados + "Maximo\n";
             }
-            if (txtMin.Text == "")
+            if (txtStock.Text == "")
             {
                 Resultados = Resultados + "Minimo \n";
             }
 
-            if (txtSalida.Text == "")
-            {
-                Resultados = Resultados + "Salida \n";
-            }
-            if (txtEntrada.Text == "")
-            {
-                Resultados = Resultados + "Entrada \n";
-            }
-            if (txtExistencia.Text=="")
+           if (txtStock.Text=="")
             {
                 Resultados = Resultados + "Existencia \n";
             }
@@ -87,7 +88,7 @@ namespace Soft_P3.Presentacion
             {
                 Resultados = Resultados + "Precio de Venta \n";
             }
-            if (txtCostoU.Text=="")
+            if (txtPrecioC.Text=="")
             {
                 Resultados = Resultados + "Costo Unitario \n";
             }
@@ -101,36 +102,38 @@ namespace Soft_P3.Presentacion
             btnNuevo.Visible = !b;
             btnEditar.Visible = !b;
             btnEliminar.Visible = !b;
+            
             dgvArticulos.Enabled = !b;
+            btnBuscarCa.Visible = b;
+            btnBuscPro.Visible = b;
 
+            txtNombre.Enabled = b;
+            txtDescripcion.Enabled = b;
             txtIdCat.Enabled = b;
             txtDescCat.Enabled = b;
-            txtDescripcion.Enabled = b;
-            txtUbicacion.Enabled = b;
-            txtMax.Enabled = b;
+            
+            txtIdProveedor.Enabled = b;
+            txtProveedor.Enabled = b;
             txtMin.Enabled = b;
-            txtSalida.Enabled = b;
-            txtEntrada.Enabled = b;
-            txtExistencia.Enabled = b;
+            txtStock.Enabled = b;
             txtPrecioV.Enabled = b;
-            txtCostoU.Enabled = b;
+            txtPrecioC.Enabled = b;
 
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(true);
+
             txtCodArt.Text = "";
             txtIdCat.Text = "";
             txtDescCat.Text = "";
-            txtDescripcion.Text = "";
-            txtUbicacion.Text = "";
-            txtMax.Text = "";
+            txtNombre.Text = "";
+            txtIdProveedor.Text = "";
             txtMin.Text = "";
-            txtSalida.Text = "";
-            txtEntrada.Text = "";
-            txtExistencia.Text = "";
+            txtStock.Text = "";
+            txtProveedor.Text = "";
             txtPrecioV.Text = "";
-            txtCostoU.Text = "";
+            txtPrecioC.Text = "";
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -148,17 +151,18 @@ namespace Soft_P3.Presentacion
                     if (txtCodArt.Text == "")
                     {
                         Articulo articulo = new Articulo();
-                        articulo.DescArt = txtDescripcion.Text;
-                        articulo.categoria1.Id = Convert.ToInt32(txtIdCat.Text);
-                        articulo.ubicacion = txtUbicacion.Text;
-                        articulo.maximo = Convert.ToInt32(txtMax.Text);
-                        articulo.minimo = Convert.ToInt32(txtMin.Text);
-                        articulo.entrada = Convert.ToInt32(txtEntrada);
-                        articulo.salida = Convert.ToInt32(txtSalida);
-                        articulo.costUnitario = Convert.ToDouble(txtCostoU.Text);
-                        articulo.precioVenta = Convert.ToDouble(txtPrecioV.Text);
-                        articulo.existencia = Convert.ToInt32(txtExistencia.Text);
 
+                        articulo.nombre = txtNombre.Text;
+                        articulo.DescArt = txtNombre.Text;
+                        articulo.categoria1.Id = Convert.ToInt32(txtIdCat.Text);
+                        articulo.precioCompra = Convert.ToDouble(txtPrecioC.Text);
+                        articulo.precioVenta = Convert.ToDouble(txtPrecioV.Text);
+                        articulo.existencia = Convert.ToInt32(txtStock.Text);
+                        articulo.minimo = Convert.ToInt32(txtMin.Text);
+                       
+                        articulo.nProveedor.Id= Convert.ToInt32(txtIdProveedor);
+                        articulo.FechaVencimiento = dtFechaVencimiento.Value;
+                    
                         if (Farticulo.Agregar(articulo))
                         {
                             MessageBox.Show("Datos insertados correctamente");
@@ -168,17 +172,18 @@ namespace Soft_P3.Presentacion
                     else
                     {
                         Articulo articulo = new Articulo();
+                        
                         articulo.Id = Convert.ToInt32(txtCodArt.Text);
-                        articulo.DescArt = txtDescripcion.Text;
+                        articulo.nombre = txtNombre.Text;
+                        articulo.DescArt = txtNombre.Text;
                         articulo.categoria1.Id = Convert.ToInt32(txtIdCat.Text);
-                        articulo.ubicacion = txtUbicacion.Text;
-                        articulo.maximo = Convert.ToInt32(txtMax.Text);
-                        articulo.minimo = Convert.ToInt32(txtMin.Text);
-                        articulo.entrada = Convert.ToInt32(txtEntrada);
-                        articulo.salida = Convert.ToInt32(txtSalida);
-                        articulo.costUnitario = Convert.ToDouble(txtCostoU.Text);
+                        articulo.precioCompra = Convert.ToDouble(txtPrecioC.Text);
                         articulo.precioVenta = Convert.ToDouble(txtPrecioV.Text);
-                        articulo.existencia = Convert.ToInt32(txtExistencia.Text);
+                        articulo.existencia = Convert.ToInt32(txtStock.Text);
+                        articulo.minimo = Convert.ToInt32(txtMin.Text);
+
+                        articulo.nProveedor.Id = Convert.ToInt32(txtIdProveedor);
+                        articulo.FechaVencimiento = dtFechaVencimiento.Value;
 
                         if (Farticulo.Actualizar(articulo) == 1)
                         {
@@ -211,19 +216,17 @@ namespace Soft_P3.Presentacion
             {
 
                 txtCodArt.Text = dgvArticulos.CurrentRow.Cells["CodArt"].Value.ToString();
+                txtNombre.Text = dgvArticulos.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtDescripcion.Text = dgvArticulos.CurrentRow.Cells["DescArt"].Value.ToString();
                 txtIdCat.Text = dgvArticulos.CurrentRow.Cells["IdCategoria"].Value.ToString();
-                txtDescCat.Text = dgvArticulos.CurrentRow.Cells["Descripcion"].Value.ToString();
+                txtDescCat.Text = dgvArticulos.CurrentRow.Cells["CategoriaDescripcion"].Value.ToString();
+                txtPrecioC.Text = dgvArticulos.CurrentRow.Cells["PrecioCompra"].Value.ToString();
                 txtPrecioV.Text = dgvArticulos.CurrentRow.Cells["PrecioVenta"].Value.ToString();
-                txtExistencia.Text = dgvArticulos.CurrentRow.Cells["Existencia"].Value.ToString();
-                txtEntrada.Text = dgvArticulos.CurrentRow.Cells["Entrada"].Value.ToString();
-                txtSalida.Text = dgvArticulos.CurrentRow.Cells["Salida"].Value.ToString();
-                txtUbicacion.Text = dgvArticulos.CurrentRow.Cells["Ubicacion"].Value.ToString();
-                txtMax.Text = dgvArticulos.CurrentRow.Cells["Maximo"].Value.ToString();
+                txtStock.Text = dgvArticulos.CurrentRow.Cells["Stock"].Value.ToString();
                 txtMin.Text = dgvArticulos.CurrentRow.Cells["Minimo"].Value.ToString();
-                txtCostoU.Text = dgvArticulos.CurrentRow.Cells["CostUnitario"].Value.ToString();
                 txtIdProveedor.Text = dgvArticulos.CurrentRow.Cells["Proveedor"].Value.ToString();
-                txtProveedor.Text = dgvArticulos.CurrentRow.Cells["NombProveedor"].Value.ToString();
+                txtProveedor.Text = dgvArticulos.CurrentRow.Cells["NombreProveedor"].Value.ToString();
+                dtFechaVencimiento.Text = dgvArticulos.CurrentRow.Cells["FechaVencimiento"].Value.ToString();
             }
         }
 
@@ -238,9 +241,9 @@ namespace Soft_P3.Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmProveedor frmpro = new frmProveedor();
-            frmpro.SetFlag("1");
-            frmpro.ShowDialog();
+            frmProveedor frmPro = new frmProveedor();
+            frmPro.SetFlag("1");
+            frmPro.ShowDialog();
         }
 
         private void dgvArticulos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -250,7 +253,67 @@ namespace Soft_P3.Presentacion
 
         private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+        }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (MessageBox.Show("¿Realmente desea eliminar los Articulos seleccionados?", "Eliminacion de Articulos,", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    foreach (DataGridViewRow row in dgvArticulos.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells["Eliminar"].Value))
+                        {
+                            Articulo articulo = new Articulo();
+                            articulo.Id = Convert.ToInt32(row.Cells["IdProveedor"].Value);
+                            if (Farticulo.Eliminar(articulo) != 1)
+                            {
+                                MessageBox.Show("El Articulo no pudo ser eliminado! ", "Eliminacion de Articulos", MessageBoxButtons.OK, MessageBoxIcon
+                                    .Warning);
+                                frmArticulo_Load(null, null);
+                            }
+                        }
+                    }
+                    frmArticulo_Load(null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void txtBuscarArti_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cname = String.Concat("[", dt.Columns[1].ColumnName, "]");
+                dt.DefaultView.Sort = cname;
+                DataView dv = dt.DefaultView;
+                if (txtBuscarArti.Text != string.Empty)
+                {
+                    dv.RowFilter = cname + " LIKE '%" + txtBuscarArti.Text + "%'";
+                    dgvArticulos.DataSource = dv;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnBuscarCa_Click_1(object sender, EventArgs e)
+        {
+            frmCategoria frmcate = new frmCategoria();
+            frmcate.SetFlag("1");
+            frmcate.ShowDialog();
         }
     }
 }

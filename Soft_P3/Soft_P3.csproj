@@ -101,12 +101,6 @@
     <Compile Include="Presentacion\frmFacturacion.Designer.cs">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmFacturaVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\frmFacturaVenta.Designer.cs">
-      <DependentUpon>frmFacturaVenta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,9 +144,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmFacturacion.resx">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmFacturaVenta.resx">
-      <DependentUpon>frmFacturaVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>

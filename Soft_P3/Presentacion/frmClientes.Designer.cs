@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
@@ -101,6 +101,7 @@
             this.dgvClientes.Location = new System.Drawing.Point(6, 88);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
+            this.dgvClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvClientes.RowTemplate.Height = 24;
             this.dgvClientes.Size = new System.Drawing.Size(1428, 351);
             this.dgvClientes.TabIndex = 4;
@@ -109,10 +110,10 @@
             // 
             // Eliminar
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.NullValue = false;
-            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.NullValue = false;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle2;
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
@@ -212,6 +213,7 @@
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Bell MT", 12F);
             this.txtEmail.Location = new System.Drawing.Point(799, 223);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
@@ -222,6 +224,7 @@
             // txtNacionalidad
             // 
             this.txtNacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNacionalidad.Enabled = false;
             this.txtNacionalidad.Font = new System.Drawing.Font("Bell MT", 12F);
             this.txtNacionalidad.Location = new System.Drawing.Point(799, 187);
             this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(4);
@@ -232,6 +235,7 @@
             // txtCelular
             // 
             this.txtCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCelular.Enabled = false;
             this.txtCelular.Font = new System.Drawing.Font("Bell MT", 12F);
             this.txtCelular.Location = new System.Drawing.Point(799, 153);
             this.txtCelular.Margin = new System.Windows.Forms.Padding(4);
@@ -242,6 +246,7 @@
             // txtTelefono
             // 
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefono.Enabled = false;
             this.txtTelefono.Font = new System.Drawing.Font("Bell MT", 12F);
             this.txtTelefono.Location = new System.Drawing.Point(799, 117);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
@@ -325,6 +330,7 @@
             // 
             this.txtDireccion.BackColor = System.Drawing.SystemColors.Window;
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDireccion.Enabled = false;
             this.txtDireccion.Font = new System.Drawing.Font("Bell MT", 12F);
             this.txtDireccion.ForeColor = System.Drawing.Color.Black;
             this.txtDireccion.Location = new System.Drawing.Point(150, 294);
@@ -337,6 +343,7 @@
             // 
             this.txtRNC.BackColor = System.Drawing.SystemColors.Window;
             this.txtRNC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRNC.Enabled = false;
             this.txtRNC.Font = new System.Drawing.Font("Bell MT", 12F);
             this.txtRNC.ForeColor = System.Drawing.Color.Black;
             this.txtRNC.Location = new System.Drawing.Point(150, 259);
@@ -349,6 +356,7 @@
             // 
             this.txtApellido.BackColor = System.Drawing.SystemColors.Window;
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApellido.Enabled = false;
             this.txtApellido.Font = new System.Drawing.Font("Bell MT", 12F);
             this.txtApellido.ForeColor = System.Drawing.Color.Black;
             this.txtApellido.Location = new System.Drawing.Point(150, 190);
@@ -361,6 +369,7 @@
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.Window;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Bell MT", 12F);
             this.txtNombre.ForeColor = System.Drawing.Color.Black;
             this.txtNombre.Location = new System.Drawing.Point(150, 155);
@@ -373,6 +382,7 @@
             // 
             this.txtCedula.BackColor = System.Drawing.SystemColors.Window;
             this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCedula.Enabled = false;
             this.txtCedula.Font = new System.Drawing.Font("Bell MT", 12F);
             this.txtCedula.ForeColor = System.Drawing.Color.Black;
             this.txtCedula.Location = new System.Drawing.Point(150, 225);

@@ -21,17 +21,17 @@ namespace Soft_P3.Presentacion
         {
             InitializeComponent();
         }
-        public void SetFlag(string valor)
-        {
-            txtFlag.Text = valor;
-        }
-
+    
         private void frmProveedor_Load(object sender, EventArgs e)
         {
             da = new SqlDataAdapter("usp_Data_FProveedor_GetAll", conexion.ObtenerConexion());
             dt = new DataTable();
             da.Fill(dt);
-            dataGridView1.DataSource = dt;
+            dgvProveedor.DataSource = dt;
+        }
+        public void SetFlag(string svalor)
+        {
+            txtFlag.Text = svalor;
         }
         public string ValidarDatos()
         {
@@ -46,12 +46,12 @@ namespace Soft_P3.Presentacion
             }
             if (txtCiudad.Text == "")
             {
-                Resultados = Resultados + "Ciudad";
+                Resultados = Resultados + "Ciudad\n";
             }
 
             if (txtRNC.Text == "")
             {
-                Resultados = Resultados + "RNC";
+                Resultados = Resultados + "RNC\n";
             }
             if (txtPais.Text == "")
             {
@@ -72,7 +72,7 @@ namespace Soft_P3.Presentacion
             btnNuevo.Visible = !b;
             btnEditar.Visible = !b;
             btnEliminar.Visible = !b;
-            dataGridView1.Enabled = !b;
+            dgvProveedor.Enabled = !b;
 
             txtNombre.Enabled = b;
             txtTelefono.Enabled = b;
@@ -95,59 +95,7 @@ namespace Soft_P3.Presentacion
             txtPais.Text = "";
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string sResultados = ValidarDatos();
-                if (sResultados == "")
-                {
-                    if (txtId.Text == "")
-                    {
-                        Proveedor proveedor = new Proveedor();
-                        proveedor.Nombre=txtNombre.Text;
-                        proveedor.Telefono = txtTelefono.Text;
-                        proveedor.Rnc = txtRNC.Text;
-                        proveedor.Pais = txtPais.Text;
-                        proveedor.Ciudad = txtCiudad.Text;
-                        proveedor.Email = txtEmail.Text;
-
-                        if (Fproveedor.Agregar(proveedor))
-                        {
-                            MessageBox.Show("Datos insertados correctamente");
-                            frmProveedor_Load(null, null);
-                        }
-                    }
-                    else
-                    {
-                        Proveedor proveedor = new Proveedor();
-                        proveedor.Id = Convert.ToInt32(txtId.Text);
-                        proveedor.Nombre = txtNombre.Text;
-                        proveedor.Rnc = txtRNC.Text;
-                        proveedor.Telefono = txtTelefono.Text;
-                        proveedor.Ciudad = txtCiudad.Text;
-                        proveedor.Pais = txtPais.Text;
-                        proveedor.Email = txtEmail.Text;
-                        
-                        if (Fproveedor.Actualizar(proveedor) == 1)
-                        {
-                            MessageBox.Show("Datos Actualizados Correctamente");
-                            frmProveedor_Load(null, null);
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Faltan Datos! \n" + sResultados);
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
+      
         private void btnEditar_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(true);
@@ -156,7 +104,7 @@ namespace Soft_P3.Presentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(false);
-            //dgvClientes_CellClick(null, null);
+            dgvProveedor_CellClick(null, null);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -165,7 +113,7 @@ namespace Soft_P3.Presentacion
             {
                 if (MessageBox.Show("¿Realmente desea eliminar los Proveedores seleccionados?", "Eliminacion de Proveedores,", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    foreach (DataGridViewRow row in dgvProveedor.Rows)
                     {
                         if (Convert.ToBoolean(row.Cells["Eliminar"].Value))
                         {
@@ -189,26 +137,26 @@ namespace Soft_P3.Presentacion
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvProveedor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.CurrentRow != null)
+            if (dgvProveedor.CurrentRow != null)
             {
 
-                txtId.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                txtNombre.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                txtTelefono.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                txtRNC.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                txtPais.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                txtCiudad.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                txtEmail.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                txtId.Text = dgvProveedor.CurrentRow.Cells[1].Value.ToString();
+                txtNombre.Text = dgvProveedor.CurrentRow.Cells[2].Value.ToString();
+                txtTelefono.Text = dgvProveedor.CurrentRow.Cells[3].Value.ToString();
+                txtRNC.Text = dgvProveedor.CurrentRow.Cells[4].Value.ToString();
+                txtPais.Text = dgvProveedor.CurrentRow.Cells[5].Value.ToString();
+                txtCiudad.Text = dgvProveedor.CurrentRow.Cells[6].Value.ToString();
+                txtEmail.Text = dgvProveedor.CurrentRow.Cells[7].Value.ToString();
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["Eliminar"].Index)
+            if (e.ColumnIndex == dgvProveedor.Columns["Eliminar"].Index)
             {
-                DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dataGridView1.Rows[e.RowIndex].Cells["Eliminar"];
+                DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dgvProveedor.Rows[e.RowIndex].Cells["Eliminar"];
                 chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
             }
         }
@@ -223,7 +171,7 @@ namespace Soft_P3.Presentacion
                 if (txtBuscar.Text != string.Empty)
                 {
                     dv.RowFilter = cname + " LIKE '%" + txtBuscar.Text + "%'";
-                    dataGridView1.DataSource = dv;
+                    dgvProveedor.DataSource = dv;
                 }
 
 
@@ -240,15 +188,71 @@ namespace Soft_P3.Presentacion
             if (txtFlag.Text == "1")
             {
 
-                frmArticulo Art = frmArticulo.GetInstancia();
-                if (dataGridView1.CurrentRow != null)
+                frmArticulo Art = frmArticulo.GetInstance();
+                if (dgvProveedor.CurrentRow != null)
                 {
-                    Art.SetCategoria(dataGridView1.CurrentRow.Cells[1].Value.ToString(),
-                        dataGridView1.CurrentRow.Cells[2].Value.ToString());
+                    Art.SetCategoria(dgvProveedor.CurrentRow.Cells[1].Value.ToString(),
+                        dgvProveedor.CurrentRow.Cells[2].Value.ToString());
                     Art.Show();
                     Close();
                 }
             }
         }
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+             try
+            {
+                string sResultados = ValidarDatos();
+                if (sResultados == "")
+                {
+                    if (txtId.Text == "")
+                    {
+                        Proveedor proveedor = new Proveedor();
+                        proveedor.Nombre = txtNombre.Text;
+                        proveedor.Telefono = txtTelefono.Text;
+                        proveedor.Pais = txtPais.Text;
+                        proveedor.Ciudad = txtCiudad.Text;
+                        proveedor.Rnc = txtRNC.Text;
+                        proveedor.Email = txtEmail.Text;
+
+                        if (Fproveedor.Agregar(proveedor))
+                        {
+                            MessageBox.Show("Datos insertados correctamente");
+                            frmProveedor_Load(null, null);
+                        }
+                    }
+                    else
+                    {
+                        
+                        Proveedor proveedor = new Proveedor();
+
+                        proveedor.Id = Convert.ToInt32(txtId.Text);
+                        proveedor.Nombre = txtNombre.Text;
+                        proveedor.Telefono = txtTelefono.Text;
+                        proveedor.Pais = txtPais.Text;
+                        proveedor.Ciudad = txtCiudad.Text;
+                        proveedor.Rnc = txtRNC.Text;
+                        proveedor.Email = txtEmail.Text;
+
+                        if (Fproveedor.Actualizar(proveedor) == 1)
+                        {
+                            MessageBox.Show("Datos Actualizados Correctamente");
+                            frmProveedor_Load(null, null);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Faltan Datos! \n" + sResultados);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+        
     }
 }

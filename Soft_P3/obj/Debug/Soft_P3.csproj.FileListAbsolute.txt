@@ -9,7 +9,6 @@ C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Presentacion.frmCxC.resources
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Presentacion.frmCxP.resources
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Presentacion.frmEmpleado.resources
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Form1.resources
-C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Presentacion.frmFacturaVenta.resources
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Presentacion.FrmMenu.resources
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Presentacion.frmProveedor.resources
 C:\YilsonRepo\Soft_P3\Soft_P3\obj\Debug\Soft_P3.Presentacion.frmUsuario.resources

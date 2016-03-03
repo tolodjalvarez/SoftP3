@@ -30,16 +30,15 @@ namespace Soft_P3.Datos
             SqlCommand sql = new SqlCommand("usp_Data_FArticulo_Insert", conexion.ObtenerConexion());
             sql.CommandType = CommandType.StoredProcedure;
 
-            sql.Parameters.Add("@DesArt", SqlDbType.VarChar, 100).Value = articulo.DescArt;
+            sql.Parameters.Add("@DesArt", SqlDbType.VarChar, 0).Value = articulo.DescArt;
             sql.Parameters.Add("@PrecioVenta", SqlDbType.Decimal,0).Value = articulo.PrecioVenta;
-            sql.Parameters.Add("@Existencia", SqlDbType.VarChar, 100).Value = articulo.Existencia;
-            sql.Parameters.Add("@Entrada", SqlDbType.Int, 0).Value = articulo.Entrada;
-            sql.Parameters.Add("@Salida", SqlDbType.Int, 0).Value = articulo.Salida;
-            sql.Parameters.Add("@Ubicacion", SqlDbType.VarChar, 100).Value = articulo.Ubicacion;
-            sql.Parameters.Add("@Maximo", SqlDbType.Int, 0).Value = articulo.Maximo;
-            sql.Parameters.Add("@Minimo", SqlDbType.Int, 0).Value = articulo.Minimo;
-            sql.Parameters.Add("@CostUnitario", SqlDbType.Decimal, 0).Value = articulo.CostUnitario;
-            
+            sql.Parameters.Add("@Existencia", SqlDbType.VarChar,0).Value = articulo.Existencia;
+            sql.Parameters.Add("@IdCategoria", SqlDbType.Int, 0).Value = articulo.Categoria1.Id;
+           sql.Parameters.Add("@Minimo", SqlDbType.Int, 0).Value = articulo.Minimo;
+            sql.Parameters.Add("@Proveedor", SqlDbType.Int, 0).Value = articulo.nProveedor.Id;
+            sql.Parameters.Add("@Nombre", SqlDbType.VarChar, 0).Value = articulo.Nombre;
+            sql.Parameters.Add("@PrecioCompra", SqlDbType.Decimal, 0).Value = articulo.PrecioCompra;
+            sql.Parameters.Add("@FechaVencimiento", SqlDbType.VarChar, 0).Value = articulo.FechaVencimiento;
 
             try
             {
@@ -58,18 +57,14 @@ namespace Soft_P3.Datos
             sql.CommandType = CommandType.StoredProcedure;
 
             sql.Parameters.AddWithValue("@CodArt", articulo.Id);
-            sql.Parameters.AddWithValue("@Descripcion", articulo.DescArt);
-            sql.Parameters.AddWithValue("@PrecioVenta", articulo.PrecioVenta);
-            sql.Parameters.AddWithValue("@existencia", articulo.Existencia);
-            sql.Parameters.AddWithValue("@Entrada", articulo.Entrada);
-            sql.Parameters.AddWithValue("@IdCategoria", articulo.Categoria1.Id);
-
-            sql.Parameters.AddWithValue("@Salida", articulo.Salida);
-            sql.Parameters.AddWithValue("@Ubicacion", articulo.Ubicacion);
-            sql.Parameters.AddWithValue("@Maximo", articulo.Maximo);
-            sql.Parameters.AddWithValue("@Minimo", articulo.Minimo);
-            sql.Parameters.AddWithValue("@CostUnitario", articulo.CostUnitario);
-            sql.Parameters.AddWithValue("@Proveedor", articulo.nProveedor.Id);
+            sql.Parameters.Add("@Existencia", SqlDbType.VarChar, 0).Value = articulo.Existencia;
+            sql.Parameters.Add("@IdCategoria", SqlDbType.Int, 0).Value = articulo.Categoria1.Id;
+           
+            sql.Parameters.Add("@Minimo", SqlDbType.Int, 0).Value = articulo.Minimo;
+            sql.Parameters.Add("@Proveedor", SqlDbType.Int, 0).Value = articulo.nProveedor.Id;
+            sql.Parameters.Add("@Nombre", SqlDbType.VarChar, 0).Value = articulo.Nombre;
+            sql.Parameters.Add("@PrecioCompra", SqlDbType.Decimal, 0).Value = articulo.PrecioCompra;
+            sql.Parameters.Add("@FechaVencimiento", SqlDbType.DateTime, 0).Value = articulo.FechaVencimiento;
 
             int resul = sql.ExecuteNonQuery();
             return Convert.ToInt32(resul > 0);

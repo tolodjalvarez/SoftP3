@@ -32,41 +32,39 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtBuscarArti = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtExistencia = new System.Windows.Forms.TextBox();
             this.txtPrecioV = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnBuscarCa = new System.Windows.Forms.Button();
-            this.txtCostoU = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.txtPrecioC = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSalida = new System.Windows.Forms.TextBox();
-            this.txtEntrada = new System.Windows.Forms.TextBox();
-            this.txtMax = new System.Windows.Forms.TextBox();
             this.txtMin = new System.Windows.Forms.TextBox();
-            this.txtUbicacion = new System.Windows.Forms.TextBox();
-            this.txtDescCat = new System.Windows.Forms.TextBox();
-            this.txtIdCat = new System.Windows.Forms.TextBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCodArt = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscPro = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtProveedor = new System.Windows.Forms.TextBox();
             this.txtIdProveedor = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtFechaVencimiento = new System.Windows.Forms.DateTimePicker();
+            this.txtFlag = new System.Windows.Forms.TextBox();
+            this.btnBuscarCa = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDescCat = new System.Windows.Forms.TextBox();
+            this.txtIdCat = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
@@ -79,9 +77,9 @@
             this.groupBox1.Controls.Add(this.txtBuscarArti);
             this.groupBox1.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(13, 395);
+            this.groupBox1.Location = new System.Drawing.Point(13, 379);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1378, 362);
+            this.groupBox1.Size = new System.Drawing.Size(1511, 398);
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de Articulos";
@@ -103,25 +101,38 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Aqua;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnEliminar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(1229, 46);
+            this.btnEliminar.Location = new System.Drawing.Point(1358, 35);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(143, 36);
             this.btnEliminar.TabIndex = 15;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dgvArticulos
             // 
+            this.dgvArticulos.AllowUserToAddRows = false;
+            this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(6, 88);
+            this.dgvArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Eliminar});
+            this.dgvArticulos.Location = new System.Drawing.Point(6, 74);
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowTemplate.Height = 24;
-            this.dgvArticulos.Size = new System.Drawing.Size(1366, 268);
+            this.dgvArticulos.Size = new System.Drawing.Size(1495, 318);
             this.dgvArticulos.TabIndex = 4;
             this.dgvArticulos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellClick);
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             this.dgvArticulos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentDoubleClick);
             this.dgvArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellDoubleClick);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 92;
             // 
             // txtBuscarArti
             // 
@@ -130,33 +141,22 @@
             this.txtBuscarArti.Name = "txtBuscarArti";
             this.txtBuscarArti.Size = new System.Drawing.Size(288, 30);
             this.txtBuscarArti.TabIndex = 3;
+            this.txtBuscarArti.TextChanged += new System.EventHandler(this.txtBuscarArti_TextChanged);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(1018, 32);
+            this.dateTimePicker1.Location = new System.Drawing.Point(1139, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(338, 28);
             this.dateTimePicker1.TabIndex = 44;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(572, 189);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 24);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "Existencia";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(572, 154);
+            this.label8.Location = new System.Drawing.Point(631, 156);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 24);
@@ -168,26 +168,18 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(572, 119);
+            this.label7.Location = new System.Drawing.Point(631, 120);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(141, 24);
             this.label7.TabIndex = 43;
-            this.label7.Text = "Costo Unitario";
-            // 
-            // txtExistencia
-            // 
-            this.txtExistencia.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtExistencia.Location = new System.Drawing.Point(719, 186);
-            this.txtExistencia.Margin = new System.Windows.Forms.Padding(4);
-            this.txtExistencia.Name = "txtExistencia";
-            this.txtExistencia.Size = new System.Drawing.Size(229, 30);
-            this.txtExistencia.TabIndex = 38;
+            this.label7.Text = "Precio Compra";
             // 
             // txtPrecioV
             // 
+            this.txtPrecioV.Enabled = false;
             this.txtPrecioV.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtPrecioV.Location = new System.Drawing.Point(719, 152);
+            this.txtPrecioV.Location = new System.Drawing.Point(794, 153);
             this.txtPrecioV.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecioV.Name = "txtPrecioV";
             this.txtPrecioV.Size = new System.Drawing.Size(229, 30);
@@ -205,58 +197,22 @@
             this.label12.TabIndex = 46;
             this.label12.Text = "Articulos";
             // 
-            // btnBuscarCa
+            // txtPrecioC
             // 
-            this.btnBuscarCa.BackColor = System.Drawing.Color.Aqua;
-            this.btnBuscarCa.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnBuscarCa.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCa.Location = new System.Drawing.Point(440, 186);
-            this.btnBuscarCa.Name = "btnBuscarCa";
-            this.btnBuscarCa.Size = new System.Drawing.Size(87, 29);
-            this.btnBuscarCa.TabIndex = 51;
-            this.btnBuscarCa.Text = "Buscar";
-            this.btnBuscarCa.UseVisualStyleBackColor = false;
-            this.btnBuscarCa.Click += new System.EventHandler(this.btnBuscarCa_Click);
-            // 
-            // txtCostoU
-            // 
-            this.txtCostoU.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtCostoU.Location = new System.Drawing.Point(719, 116);
-            this.txtCostoU.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCostoU.Name = "txtCostoU";
-            this.txtCostoU.Size = new System.Drawing.Size(229, 30);
-            this.txtCostoU.TabIndex = 40;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(16, 362);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 24);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "Salida";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(16, 328);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(81, 24);
-            this.label11.TabIndex = 36;
-            this.label11.Text = "Entrada";
+            this.txtPrecioC.Enabled = false;
+            this.txtPrecioC.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.txtPrecioC.Location = new System.Drawing.Point(794, 117);
+            this.txtPrecioC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrecioC.Name = "txtPrecioC";
+            this.txtPrecioC.Size = new System.Drawing.Size(229, 30);
+            this.txtPrecioC.TabIndex = 40;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(16, 294);
+            this.label6.Location = new System.Drawing.Point(16, 306);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 24);
@@ -268,48 +224,24 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(16, 259);
+            this.label5.Location = new System.Drawing.Point(16, 269);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 24);
+            this.label5.Size = new System.Drawing.Size(102, 24);
             this.label5.TabIndex = 34;
-            this.label5.Text = "Maximo";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(16, 224);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 24);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Ubicacion";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 189);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 24);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Categoria";
+            this.label5.Text = "Existencia";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(16, 154);
+            this.label2.Location = new System.Drawing.Point(16, 191);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 24);
+            this.label2.Size = new System.Drawing.Size(81, 24);
             this.label2.TabIndex = 31;
-            this.label2.Text = "Descripcion";
+            this.label2.Text = "Nombre";
             // 
             // label1
             // 
@@ -323,80 +255,39 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "Cod. Articulo";
             // 
-            // txtSalida
-            // 
-            this.txtSalida.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtSalida.Location = new System.Drawing.Point(200, 360);
-            this.txtSalida.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSalida.Name = "txtSalida";
-            this.txtSalida.Size = new System.Drawing.Size(233, 30);
-            this.txtSalida.TabIndex = 28;
-            // 
-            // txtEntrada
-            // 
-            this.txtEntrada.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtEntrada.Location = new System.Drawing.Point(200, 326);
-            this.txtEntrada.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEntrada.Name = "txtEntrada";
-            this.txtEntrada.Size = new System.Drawing.Size(233, 30);
-            this.txtEntrada.TabIndex = 27;
-            // 
-            // txtMax
-            // 
-            this.txtMax.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtMax.Location = new System.Drawing.Point(200, 292);
-            this.txtMax.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMax.Name = "txtMax";
-            this.txtMax.Size = new System.Drawing.Size(233, 30);
-            this.txtMax.TabIndex = 26;
-            // 
             // txtMin
             // 
+            this.txtMin.Enabled = false;
             this.txtMin.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtMin.Location = new System.Drawing.Point(200, 256);
+            this.txtMin.Location = new System.Drawing.Point(200, 304);
             this.txtMin.Margin = new System.Windows.Forms.Padding(4);
             this.txtMin.Name = "txtMin";
             this.txtMin.Size = new System.Drawing.Size(233, 30);
-            this.txtMin.TabIndex = 25;
+            this.txtMin.TabIndex = 26;
             // 
-            // txtUbicacion
+            // txtStock
             // 
-            this.txtUbicacion.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtUbicacion.Location = new System.Drawing.Point(200, 222);
-            this.txtUbicacion.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUbicacion.Name = "txtUbicacion";
-            this.txtUbicacion.Size = new System.Drawing.Size(233, 30);
-            this.txtUbicacion.TabIndex = 24;
+            this.txtStock.Enabled = false;
+            this.txtStock.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.txtStock.Location = new System.Drawing.Point(200, 266);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(233, 30);
+            this.txtStock.TabIndex = 25;
             // 
-            // txtDescCat
+            // txtNombre
             // 
-            this.txtDescCat.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtDescCat.Location = new System.Drawing.Point(266, 186);
-            this.txtDescCat.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDescCat.Name = "txtDescCat";
-            this.txtDescCat.Size = new System.Drawing.Size(167, 30);
-            this.txtDescCat.TabIndex = 23;
-            // 
-            // txtIdCat
-            // 
-            this.txtIdCat.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtIdCat.Location = new System.Drawing.Point(200, 186);
-            this.txtIdCat.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIdCat.Name = "txtIdCat";
-            this.txtIdCat.Size = new System.Drawing.Size(58, 30);
-            this.txtIdCat.TabIndex = 22;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtDescripcion.Location = new System.Drawing.Point(200, 152);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(233, 30);
-            this.txtDescripcion.TabIndex = 29;
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.txtNombre.Location = new System.Drawing.Point(200, 189);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(233, 30);
+            this.txtNombre.TabIndex = 29;
             // 
             // txtCodArt
             // 
+            this.txtCodArt.Enabled = false;
             this.txtCodArt.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.txtCodArt.Location = new System.Drawing.Point(200, 116);
             this.txtCodArt.Margin = new System.Windows.Forms.Padding(4);
@@ -409,7 +300,7 @@
             this.btnCancelar.BackColor = System.Drawing.Color.Aqua;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCancelar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(1242, 116);
+            this.btnCancelar.Location = new System.Drawing.Point(1361, 112);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(143, 36);
             this.btnCancelar.TabIndex = 48;
@@ -422,7 +313,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.Aqua;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnGuardar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(1052, 116);
+            this.btnGuardar.Location = new System.Drawing.Point(1171, 112);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(143, 36);
             this.btnGuardar.TabIndex = 45;
@@ -435,7 +326,7 @@
             this.btnEditar.BackColor = System.Drawing.Color.Aqua;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnEditar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(1052, 195);
+            this.btnEditar.Location = new System.Drawing.Point(1171, 191);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(143, 36);
             this.btnEditar.TabIndex = 47;
@@ -448,7 +339,7 @@
             this.btnNuevo.BackColor = System.Drawing.Color.Aqua;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnNuevo.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(1242, 195);
+            this.btnNuevo.Location = new System.Drawing.Point(1361, 191);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(143, 36);
             this.btnNuevo.TabIndex = 46;
@@ -456,25 +347,25 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // button1
+            // btnBuscPro
             // 
-            this.button1.BackColor = System.Drawing.Color.Aqua;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(941, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 29);
-            this.button1.TabIndex = 55;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBuscPro.BackColor = System.Drawing.Color.Aqua;
+            this.btnBuscPro.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnBuscPro.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscPro.Location = new System.Drawing.Point(440, 342);
+            this.btnBuscPro.Name = "btnBuscPro";
+            this.btnBuscPro.Size = new System.Drawing.Size(87, 29);
+            this.btnBuscPro.TabIndex = 55;
+            this.btnBuscPro.Text = "Buscar";
+            this.btnBuscPro.UseVisualStyleBackColor = false;
+            this.btnBuscPro.Click += new System.EventHandler(this.button1_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(517, 246);
+            this.label14.Location = new System.Drawing.Point(16, 345);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 24);
@@ -483,8 +374,9 @@
             // 
             // txtProveedor
             // 
+            this.txtProveedor.Enabled = false;
             this.txtProveedor.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtProveedor.Location = new System.Drawing.Point(767, 243);
+            this.txtProveedor.Location = new System.Drawing.Point(266, 342);
             this.txtProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtProveedor.Name = "txtProveedor";
             this.txtProveedor.Size = new System.Drawing.Size(167, 30);
@@ -492,20 +384,123 @@
             // 
             // txtIdProveedor
             // 
+            this.txtIdProveedor.Enabled = false;
             this.txtIdProveedor.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtIdProveedor.Location = new System.Drawing.Point(701, 243);
+            this.txtIdProveedor.Location = new System.Drawing.Point(200, 342);
             this.txtIdProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdProveedor.Name = "txtIdProveedor";
             this.txtIdProveedor.Size = new System.Drawing.Size(58, 30);
             this.txtIdProveedor.TabIndex = 52;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Enabled = false;
+            this.txtDescripcion.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.txtDescripcion.Location = new System.Drawing.Point(200, 227);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(233, 30);
+            this.txtDescripcion.TabIndex = 29;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(16, 229);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 24);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Descripcion";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(631, 230);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(179, 24);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Fecha Vencimiento";
+            // 
+            // dtFechaVencimiento
+            // 
+            this.dtFechaVencimiento.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaVencimiento.Location = new System.Drawing.Point(833, 224);
+            this.dtFechaVencimiento.Name = "dtFechaVencimiento";
+            this.dtFechaVencimiento.Size = new System.Drawing.Size(190, 28);
+            this.dtFechaVencimiento.TabIndex = 56;
+            // 
+            // txtFlag
+            // 
+            this.txtFlag.Location = new System.Drawing.Point(668, 12);
+            this.txtFlag.Name = "txtFlag";
+            this.txtFlag.Size = new System.Drawing.Size(53, 22);
+            this.txtFlag.TabIndex = 57;
+            this.txtFlag.Visible = false;
+            // 
+            // btnBuscarCa
+            // 
+            this.btnBuscarCa.BackColor = System.Drawing.Color.Aqua;
+            this.btnBuscarCa.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnBuscarCa.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCa.Location = new System.Drawing.Point(440, 152);
+            this.btnBuscarCa.Name = "btnBuscarCa";
+            this.btnBuscarCa.Size = new System.Drawing.Size(87, 29);
+            this.btnBuscarCa.TabIndex = 61;
+            this.btnBuscarCa.Text = "Buscar";
+            this.btnBuscarCa.UseVisualStyleBackColor = false;
+            this.btnBuscarCa.Click += new System.EventHandler(this.btnBuscarCa_Click_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(16, 154);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 24);
+            this.label3.TabIndex = 60;
+            this.label3.Text = "Categoria";
+            // 
+            // txtDescCat
+            // 
+            this.txtDescCat.Enabled = false;
+            this.txtDescCat.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.txtDescCat.Location = new System.Drawing.Point(266, 151);
+            this.txtDescCat.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescCat.Name = "txtDescCat";
+            this.txtDescCat.Size = new System.Drawing.Size(167, 30);
+            this.txtDescCat.TabIndex = 59;
+            // 
+            // txtIdCat
+            // 
+            this.txtIdCat.Enabled = false;
+            this.txtIdCat.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
+            this.txtIdCat.Location = new System.Drawing.Point(200, 151);
+            this.txtIdCat.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdCat.Name = "txtIdCat";
+            this.txtIdCat.Size = new System.Drawing.Size(58, 30);
+            this.txtIdCat.TabIndex = 58;
             // 
             // frmArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1409, 763);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1526, 789);
+            this.Controls.Add(this.btnBuscarCa);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtDescCat);
+            this.Controls.Add(this.txtIdCat);
+            this.Controls.Add(this.txtFlag);
+            this.Controls.Add(this.dtFechaVencimiento);
+            this.Controls.Add(this.btnBuscPro);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtProveedor);
             this.Controls.Add(this.txtIdProveedor);
@@ -515,31 +510,23 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtExistencia);
             this.Controls.Add(this.txtPrecioV);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.btnBuscarCa);
-            this.Controls.Add(this.txtCostoU);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtPrecioC);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtSalida);
-            this.Controls.Add(this.txtEntrada);
-            this.Controls.Add(this.txtMax);
             this.Controls.Add(this.txtMin);
-            this.Controls.Add(this.txtUbicacion);
-            this.Controls.Add(this.txtDescCat);
-            this.Controls.Add(this.txtIdCat);
+            this.Controls.Add(this.txtStock);
             this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtCodArt);
+            this.MaximizeBox = false;
             this.Name = "frmArticulo";
             this.Text = "frmArticulo";
             this.Load += new System.EventHandler(this.frmArticulo_Load);
@@ -558,39 +545,37 @@
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.TextBox txtBuscarArti;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtExistencia;
         private System.Windows.Forms.TextBox txtPrecioV;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnBuscarCa;
-        private System.Windows.Forms.TextBox txtCostoU;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtPrecioC;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSalida;
-        private System.Windows.Forms.TextBox txtEntrada;
-        private System.Windows.Forms.TextBox txtMax;
         private System.Windows.Forms.TextBox txtMin;
-        private System.Windows.Forms.TextBox txtUbicacion;
-        private System.Windows.Forms.TextBox txtDescCat;
-        private System.Windows.Forms.TextBox txtIdCat;
-        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodArt;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscPro;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtProveedor;
         private System.Windows.Forms.TextBox txtIdProveedor;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dtFechaVencimiento;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
+        private System.Windows.Forms.TextBox txtFlag;
+        private System.Windows.Forms.Button btnBuscarCa;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDescCat;
+        private System.Windows.Forms.TextBox txtIdCat;
     }
 }

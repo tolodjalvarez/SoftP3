@@ -48,6 +48,7 @@ namespace Soft_P3.Datos
 
             }
         }
+
         public static int Actualizar(Proveedor proveedor)
         {
             SqlCommand sql = new SqlCommand("usp_Data_FProveedor_Actualizar", conexion.ObtenerConexion());

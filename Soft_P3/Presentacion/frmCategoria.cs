@@ -205,10 +205,11 @@ namespace Soft_P3.Presentacion
             if (txtFlag.Text == "1")
             {
 
-                frmArticulo Art = frmArticulo.GetInstancia();
+                frmArticulo Art = frmArticulo.GetInstance();
                 if (dgvCategoria.CurrentRow != null)
                 {
-                    Art.SetCategoria(dgvCategoria.CurrentRow.Cells[1].Value.ToString(), dgvCategoria.CurrentRow.Cells[2].Value.ToString());
+                    Art.SetCategoria(dgvCategoria.CurrentRow.Cells[1].Value.ToString(),
+                        dgvCategoria.CurrentRow.Cells[2].Value.ToString());
                     Art.Show();
                     Close();
                 }

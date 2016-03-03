@@ -32,14 +32,13 @@ namespace Soft_P3.Datos
 
             sql.Parameters.Add("@NombCliente", SqlDbType.VarChar, 100).Value = cliente.NombCliente;
             sql.Parameters.Add("@ApelliCliente",SqlDbType.VarChar, 100).Value = cliente.ApelliCliente;
-            sql.Parameters.Add("@RNC", SqlDbType.VarChar, 100).Value = cliente.Rnc;
             sql.Parameters.Add("@Telefono", SqlDbType.VarChar, 100).Value = cliente.Telefono;
             sql.Parameters.Add("@Celular", SqlDbType.VarChar, 100).Value = cliente.Celular;
             sql.Parameters.Add("@Email", SqlDbType.VarChar, 100).Value = cliente.Email;
             sql.Parameters.Add("@Cedula", SqlDbType.VarChar, 100).Value = cliente.Cedula;
             sql.Parameters.Add("@Direccion", SqlDbType.VarChar, 100).Value = cliente.Direccion;
             sql.Parameters.Add("@Nacionalidad", SqlDbType.VarChar, 100).Value = cliente.Nacionalidad;
-            sql.Parameters.Add("@ApelliCliente", SqlDbType.VarChar, 100).Value = cliente.ApelliCliente;
+            sql.Parameters.Add("@RNC", SqlDbType.VarChar, 100).Value = cliente.Rnc;
             sql.Parameters.Add("@Fecha", SqlDbType.DateTime, 0).Value=cliente.Fecha;
 
             try
