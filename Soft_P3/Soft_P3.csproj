@@ -44,8 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Datos\conexion.cs" />
     <Compile Include="Datos\Metodos.cs" />
+=======
+    <Compile Include="conexion.cs" />
+    <Compile Include="Datos\Fcategoria.cs" />
+    <Compile Include="Entidades\Articulo.cs" />
+>>>>>>> origin/master
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Presentacion\frmArticulo.cs">

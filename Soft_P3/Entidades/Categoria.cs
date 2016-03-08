@@ -8,7 +8,22 @@ namespace Soft_P3.Entidades
 {
     class Categoria
     {
-        public int Id { get; private set; }
-        public string Descripcion { get; private set; }
+
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private string descripcion;
+
+        public string Descripcion
+        {
+            get { return descripcion; }
+            set { descripcion = value; }
+        }
+
     }
 }
