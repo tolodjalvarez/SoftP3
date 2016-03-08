@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,16 +15,27 @@ namespace Soft_P3.Presentacion
 {
     public partial class frmCategoria : Form
     {
+        private static DataTable dt = new DataTable();
+        private DataSet ds=new DataSet();
         public frmCategoria()
         {
             InitializeComponent();
         }
-
+        public void SetFlag(string valor)
+        {
+            txtFlag.Text = valor;
+        }
+        private SqlDataAdapter da;
         private void frmCategoria_Load(object sender, EventArgs e)
         {
-            var aux = new Fcategoria();
-            aux.Lista(dgvCategoria);
-            dgvCategoria.AllowUserToAddRows = false;
+            //var aux = new Fcategoria();
+            //aux.Lista(dgvCategoria);
+            //dgvCategoria.AllowUserToAddRows = false;
+
+            da = new SqlDataAdapter("usp_Data_FCategoria_GetAll",conexion.ObtenerConexion());
+            dt=new DataTable();
+            da.Fill(dt);
+            dgvCategoria.DataSource = dt;
         }
         public string ValidarDatos()
         {
@@ -68,7 +80,7 @@ namespace Soft_P3.Presentacion
                     {
                         Categoria categoria=new Categoria();
                         categoria.Id = Convert.ToInt32(txtId.Text);
-
+                        categoria.Descripcion = txtDescripcion.Text;
                         if (Fcategoria.Actualizar(categoria)==1)
                         {
                             MessageBox.Show("Datos Actualizados Correctamente!");
@@ -102,9 +114,8 @@ namespace Soft_P3.Presentacion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            MostrarGuardarCancelar(true);
-            txtId.Text = "";
-            txtDescripcion.Text = "";
+            MostrarGuardarCancelar(false);
+            dgvCategoria_CellClick(null, null);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -114,18 +125,93 @@ namespace Soft_P3.Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgvCategoria.Rows)
+
+            try
             {
-                if (Convert.ToBoolean(row.Cells["Elimiar"].Value))
+                if (MessageBox.Show("¿Realmente desea eliminar las Categorias seleccionadas?", "Eliminacion de Categorias,", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    Categoria categoria = new Categoria();
-                    categoria.Id = Convert.ToInt32(row.Cells["Id"].Value);
-                    if (Fcategoria.Eliminar(categoria) != 1)
+                    foreach (DataGridViewRow row in dgvCategoria.Rows)
                     {
-                        MessageBox.Show("La Categoria no pudo ser eliminado! ", "Eliminacion de Categorias", MessageBoxButtons.OK, MessageBoxIcon
-                            .Warning);
-                        frmCategoria_Load(null,null);
+                        if (Convert.ToBoolean(row.Cells["Eliminar"].Value))
+                        {
+                            Categoria categoria = new Categoria();
+                            categoria.Id = Convert.ToInt32(row.Cells["Id"].Value);
+                            if (Fcategoria.Eliminar(categoria) != 1)
+                            {
+                                MessageBox.Show("Las Categorias no pudieron ser eliminadas! ", "Eliminacion de Categorias", MessageBoxButtons.OK, MessageBoxIcon
+                                    .Warning);
+                                frmCategoria_Load(null, null);
+                            }
+                        }
                     }
+                    frmCategoria_Load(null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+                
+            }
+            
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cname= String.Concat("[",dt.Columns[1].ColumnName,"]");
+                dt.DefaultView.Sort = cname;
+                DataView dv =dt.DefaultView;
+                if (txtBuscar.Text != string.Empty)
+                {
+                    dv.RowFilter = cname + " LIKE '%" + txtBuscar.Text + "%'";
+                    dgvCategoria.DataSource = dv; 
+                }
+                
+              
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void dgvCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvCategoria.CurrentRow != null)
+            {
+                txtId.Text = dgvCategoria.CurrentRow.Cells["Id"].Value.ToString();
+                txtDescripcion.Text = dgvCategoria.CurrentRow.Cells["Descripcion"].Value.ToString();
+
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            MostrarGuardarCancelar(true);
+            txtId.Text = "";
+            txtDescripcion.Text = "";
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+           
+        }
+
+        private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (txtFlag.Text == "1")
+            {
+
+                frmArticulo Art = frmArticulo.GetInstance();
+                if (dgvCategoria.CurrentRow != null)
+                {
+                    Art.SetCategoria(dgvCategoria.CurrentRow.Cells[1].Value.ToString(),
+                        dgvCategoria.CurrentRow.Cells[2].Value.ToString());
+                    Art.Show();
+                    Close();
                 }
             }
         }
