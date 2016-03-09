@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombreUsu = new System.Windows.Forms.TextBox();
@@ -60,26 +59,17 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtFlag = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(754, 50);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(253, 151);
-            this.pictureBox1.TabIndex = 51;
-            this.pictureBox1.TabStop = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label6.Location = new System.Drawing.Point(10, 248);
+            this.label6.Location = new System.Drawing.Point(10, 263);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 19);
             this.label6.TabIndex = 50;
@@ -90,7 +80,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label5.Location = new System.Drawing.Point(10, 216);
+            this.label5.Location = new System.Drawing.Point(10, 231);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 19);
             this.label5.TabIndex = 48;
@@ -99,7 +89,7 @@
             // txtNombreUsu
             // 
             this.txtNombreUsu.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtNombreUsu.Location = new System.Drawing.Point(169, 214);
+            this.txtNombreUsu.Location = new System.Drawing.Point(169, 229);
             this.txtNombreUsu.Name = "txtNombreUsu";
             this.txtNombreUsu.Size = new System.Drawing.Size(176, 26);
             this.txtNombreUsu.TabIndex = 47;
@@ -111,7 +101,7 @@
             this.cmbTipoUsu.Items.AddRange(new object[] {
             "Administrador (a)",
             "Vendedor"});
-            this.cmbTipoUsu.Location = new System.Drawing.Point(527, 154);
+            this.cmbTipoUsu.Location = new System.Drawing.Point(511, 168);
             this.cmbTipoUsu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbTipoUsu.Name = "cmbTipoUsu";
             this.cmbTipoUsu.Size = new System.Drawing.Size(173, 27);
@@ -123,7 +113,7 @@
             this.btnCancelar.BackColor = System.Drawing.Color.Aqua;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCancelar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(899, 263);
+            this.btnCancelar.Location = new System.Drawing.Point(575, 265);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(107, 29);
@@ -137,7 +127,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.Aqua;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnGuardar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(754, 263);
+            this.btnGuardar.Location = new System.Drawing.Point(430, 265);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(107, 29);
@@ -151,7 +141,7 @@
             this.btnEditar.BackColor = System.Drawing.Color.Aqua;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnEditar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(754, 206);
+            this.btnEditar.Location = new System.Drawing.Point(430, 208);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(107, 29);
@@ -165,7 +155,7 @@
             this.btnNuevo.BackColor = System.Drawing.Color.Aqua;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnNuevo.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(899, 206);
+            this.btnNuevo.Location = new System.Drawing.Point(575, 208);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(107, 29);
@@ -244,7 +234,7 @@
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtPass.Location = new System.Drawing.Point(169, 248);
+            this.txtPass.Location = new System.Drawing.Point(169, 263);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(176, 26);
             this.txtPass.TabIndex = 49;
@@ -280,7 +270,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(427, 154);
+            this.label9.Location = new System.Drawing.Point(411, 168);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 19);
             this.label9.TabIndex = 36;
@@ -291,7 +281,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(427, 125);
+            this.label8.Location = new System.Drawing.Point(411, 139);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 19);
             this.label8.TabIndex = 37;
@@ -302,7 +292,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(427, 97);
+            this.label7.Location = new System.Drawing.Point(411, 111);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 19);
             this.label7.TabIndex = 38;
@@ -311,7 +301,7 @@
             // txtDirec
             // 
             this.txtDirec.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtDirec.Location = new System.Drawing.Point(527, 120);
+            this.txtDirec.Location = new System.Drawing.Point(511, 134);
             this.txtDirec.Name = "txtDirec";
             this.txtDirec.Size = new System.Drawing.Size(173, 26);
             this.txtDirec.TabIndex = 34;
@@ -319,7 +309,7 @@
             // txtTel
             // 
             this.txtTel.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtTel.Location = new System.Drawing.Point(527, 91);
+            this.txtTel.Location = new System.Drawing.Point(511, 105);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(173, 26);
             this.txtTel.TabIndex = 35;
@@ -329,7 +319,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(10, 182);
+            this.label4.Location = new System.Drawing.Point(10, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 19);
             this.label4.TabIndex = 33;
@@ -340,7 +330,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(10, 154);
+            this.label3.Location = new System.Drawing.Point(10, 169);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 19);
             this.label3.TabIndex = 32;
@@ -351,7 +341,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(10, 125);
+            this.label2.Location = new System.Drawing.Point(10, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 19);
             this.label2.TabIndex = 31;
@@ -362,7 +352,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 97);
+            this.label1.Location = new System.Drawing.Point(10, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 19);
             this.label1.TabIndex = 30;
@@ -371,7 +361,7 @@
             // txtCedula
             // 
             this.txtCedula.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtCedula.Location = new System.Drawing.Point(169, 182);
+            this.txtCedula.Location = new System.Drawing.Point(169, 197);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(176, 26);
             this.txtCedula.TabIndex = 28;
@@ -379,7 +369,7 @@
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtApellido.Location = new System.Drawing.Point(169, 154);
+            this.txtApellido.Location = new System.Drawing.Point(169, 169);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(176, 26);
             this.txtApellido.TabIndex = 27;
@@ -387,7 +377,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtNombre.Location = new System.Drawing.Point(169, 123);
+            this.txtNombre.Location = new System.Drawing.Point(169, 138);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(176, 26);
             this.txtNombre.TabIndex = 29;
@@ -395,19 +385,23 @@
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.txtId.Location = new System.Drawing.Point(169, 93);
+            this.txtId.Location = new System.Drawing.Point(169, 108);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(176, 26);
             this.txtId.TabIndex = 26;
             // 
             // txtFlag
             // 
-            this.txtFlag.Location = new System.Drawing.Point(470, 20);
+            this.txtFlag.Location = new System.Drawing.Point(371, 19);
             this.txtFlag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFlag.Name = "txtFlag";
             this.txtFlag.Size = new System.Drawing.Size(41, 20);
             this.txtFlag.TabIndex = 58;
             this.txtFlag.Visible = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // frmUsuario
             // 
@@ -416,7 +410,6 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1043, 598);
             this.Controls.Add(this.txtFlag);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNombreUsu);
@@ -446,7 +439,6 @@
             this.Name = "frmUsuario";
             this.Text = "Mantenimiento Usuario";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -456,8 +448,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNombreUsu;
@@ -489,5 +479,6 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.TextBox txtFlag;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
