@@ -28,10 +28,6 @@ namespace Soft_P3.Presentacion
         private SqlDataAdapter da;
         private void frmCategoria_Load(object sender, EventArgs e)
         {
-            //var aux = new Fcategoria();
-            //aux.Lista(dgvCategoria);
-            //dgvCategoria.AllowUserToAddRows = false;
-
             da = new SqlDataAdapter("usp_Data_FCategoria_GetAll",conexion.ObtenerConexion());
             dt=new DataTable();
             da.Fill(dt);

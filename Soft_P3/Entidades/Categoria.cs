@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Soft_P3.Entidades
 {
-    class Categoria
+  public  class Categoria
     {
 
         private int id;

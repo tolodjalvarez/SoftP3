@@ -44,20 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Datos\conexion.cs" />
-    <Compile Include="Datos\Metodos.cs" />
-=======
     <Compile Include="conexion.cs" />
     <Compile Include="Datos\Farticulo.cs" />
     <Compile Include="Datos\Fcategoria.cs" />
     <Compile Include="Datos\Fcliente.cs" />
+    <Compile Include="Datos\FdetalleVenta.cs" />
     <Compile Include="Datos\Fproveedor.cs" />
+    <Compile Include="Datos\Fusuario.cs" />
+    <Compile Include="Datos\Fventa.cs" />
     <Compile Include="Entidades\Articulo.cs" />
->>>>>>> origin/master
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\DetalleVenta.cs" />
     <Compile Include="Entidades\Proveedor.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entidades\Venta.cs" />
     <Compile Include="Presentacion\frmArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +94,12 @@
     </Compile>
     <Compile Include="Presentacion\frmCxP.Designer.cs">
       <DependentUpon>frmCxP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmDetalleFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmDetalleFactura.Designer.cs">
+      <DependentUpon>frmDetalleFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmEmpleado.cs">
       <SubType>Form</SubType>
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmCxP.resx">
       <DependentUpon>frmCxP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmDetalleFactura.resx">
+      <DependentUpon>frmDetalleFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmEmpleado.resx">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
@@ -200,7 +210,9 @@
   <ItemGroup>
     <None Include="Resources\arrow_87px_1199201_easyicon.net.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\pos-2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

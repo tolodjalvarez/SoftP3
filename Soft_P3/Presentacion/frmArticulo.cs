@@ -20,6 +20,13 @@ namespace Soft_P3.Presentacion
         {
             InitializeComponent();
         }
+        private void frmArticulo_Load(object sender, EventArgs e)
+        {
+
+            var aux = new Farticulo();
+            aux.ListarArticulos(dgvArticulos);
+            dgvArticulos.AllowUserToAddRows = false;
+        }
 
         public static frmArticulo GetInstance()
         {
@@ -44,14 +51,7 @@ namespace Soft_P3.Presentacion
             txtIdProveedor.Text = id;
             txtProveedor.Text = nombre;
         }
-        private void frmArticulo_Load(object sender, EventArgs e)
-        {
-            
-            var aux = new Farticulo();
-            aux.ListarArticulos(dgvArticulos);
-            dgvArticulos.AllowUserToAddRows = false;
-        }
-
+      
         private void btnBuscarCa_Click(object sender, EventArgs e)
         {
             frmCategoria frmCat =new frmCategoria();
@@ -215,10 +215,10 @@ namespace Soft_P3.Presentacion
             if (dgvArticulos.CurrentRow != null)
             {
 
-                txtCodArt.Text = dgvArticulos.CurrentRow.Cells["CodArt"].Value.ToString();
+                txtCodArt.Text = dgvArticulos.CurrentRow.Cells["CodArticulo"].Value.ToString();
                 txtNombre.Text = dgvArticulos.CurrentRow.Cells["Nombre"].Value.ToString();
-                txtDescripcion.Text = dgvArticulos.CurrentRow.Cells["DescArt"].Value.ToString();
-                txtIdCat.Text = dgvArticulos.CurrentRow.Cells["IdCategoria"].Value.ToString();
+                txtDescripcion.Text = dgvArticulos.CurrentRow.Cells["Descripcion"].Value.ToString();
+                txtIdCat.Text = dgvArticulos.CurrentRow.Cells["CodCategoria"].Value.ToString();
                 txtDescCat.Text = dgvArticulos.CurrentRow.Cells["CategoriaDescripcion"].Value.ToString();
                 txtPrecioC.Text = dgvArticulos.CurrentRow.Cells["PrecioCompra"].Value.ToString();
                 txtPrecioV.Text = dgvArticulos.CurrentRow.Cells["PrecioVenta"].Value.ToString();
@@ -246,16 +246,7 @@ namespace Soft_P3.Presentacion
             frmPro.ShowDialog();
         }
 
-        private void dgvArticulos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
+       
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
@@ -314,6 +305,22 @@ namespace Soft_P3.Presentacion
             frmCategoria frmcate = new frmCategoria();
             frmcate.SetFlag("1");
             frmcate.ShowDialog();
+        }
+
+        private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (txtFlag.Text == "1")
+            {
+
+                frmDetalleFactura detafact = frmDetalleFactura.GetInstance();
+                if (dgvArticulos.CurrentRow != null)
+                {
+                    detafact.SetArticulo(dgvArticulos.CurrentRow.Cells["CodArticulo"].Value.ToString(),
+                        dgvArticulos.CurrentRow.Cells["Nombre"].Value.ToString());
+                    detafact.Show();
+                    Close();
+                }
+            }
         }
     }
 }

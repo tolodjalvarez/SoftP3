@@ -28,6 +28,10 @@ namespace Soft_P3.Presentacion
             aux.Lista(dgvClientes);
             dgvClientes.AllowUserToAddRows = false;
         }
+        public void SetFlag(string valor)
+        {
+            txtFlag.Text = valor;
+        }
         private void textBox12_TextChanged(object sender, EventArgs e)
         {
             try
@@ -117,9 +121,9 @@ namespace Soft_P3.Presentacion
                     if (txtId.Text == "")
                     {
                         Cliente cliente = new Cliente();
-                        cliente.NombCliente = txtCedula.Text;
-                        cliente.ApelliCliente = txtNombre.Text;
-                        cliente.Cedula = txtApellido.Text;
+                        cliente.NombCliente = txtNombre.Text;
+                        cliente.ApelliCliente = txtApellido.Text;
+                        cliente.Cedula = txtCedula.Text;
                         cliente.Direccion = txtDireccion.Text;
                         cliente.Telefono = txtTelefono.Text;
                         cliente.Celular = txtCelular.Text;
@@ -138,9 +142,9 @@ namespace Soft_P3.Presentacion
                     {
                         Cliente cliente = new Cliente();
                         cliente.Id = Convert.ToInt32(txtId.Text);
-                        cliente.NombCliente = txtCedula.Text;
-                        cliente.ApelliCliente = txtNombre.Text;
-                        cliente.Cedula = txtApellido.Text;
+                        cliente.NombCliente = txtNombre.Text;
+                        cliente.ApelliCliente = txtApellido.Text;
+                        cliente.Cedula = txtCedula.Text;
                         cliente.Direccion = txtDireccion.Text;
                         cliente.Telefono = txtTelefono.Text;
                         cliente.Celular = txtCelular.Text;
@@ -195,15 +199,17 @@ namespace Soft_P3.Presentacion
             {
 
                 txtId.Text = dgvClientes.CurrentRow.Cells[1].Value.ToString();
-                txtCedula.Text = dgvClientes.CurrentRow.Cells[2].Value.ToString();
-                txtNombre.Text = dgvClientes.CurrentRow.Cells[3].Value.ToString();
-                txtTelefono.Text = dgvClientes.CurrentRow.Cells[4].Value.ToString();
-                txtCelular.Text = dgvClientes.CurrentRow.Cells[5].Value.ToString();
-                txtEmail.Text = dgvClientes.CurrentRow.Cells[6].Value.ToString();
-                txtApellido.Text = dgvClientes.CurrentRow.Cells[7].Value.ToString();
-                txtDireccion.Text = dgvClientes.CurrentRow.Cells[8].Value.ToString();
-                txtNacionalidad.Text = dgvClientes.CurrentRow.Cells[9].Value.ToString();
-                txtRNC.Text = dgvClientes.CurrentRow.Cells[10].Value.ToString();
+                
+                txtNombre.Text = dgvClientes.CurrentRow.Cells[2].Value.ToString();
+                txtApellido.Text = dgvClientes.CurrentRow.Cells[3].Value.ToString();
+                txtRNC.Text = dgvClientes.CurrentRow.Cells[4].Value.ToString();
+                txtTelefono.Text = dgvClientes.CurrentRow.Cells[5].Value.ToString();
+                txtCelular.Text = dgvClientes.CurrentRow.Cells[6].Value.ToString();
+                txtEmail.Text = dgvClientes.CurrentRow.Cells[7].Value.ToString();
+                txtCedula.Text = dgvClientes.CurrentRow.Cells[8].Value.ToString();
+               
+                txtDireccion.Text = dgvClientes.CurrentRow.Cells[9].Value.ToString();
+                txtNacionalidad.Text = dgvClientes.CurrentRow.Cells[10].Value.ToString();
                 dtpFechaNac.Text = dgvClientes.CurrentRow.Cells[11].Value.ToString();
             }
         }
@@ -252,6 +258,21 @@ namespace Soft_P3.Presentacion
             }
         }
 
-        
+        private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (txtFlag.Text == "1")
+            {
+
+                frmFactura fact = frmFactura.GetInstance();
+                if (dgvClientes.CurrentRow != null)
+                {
+                    fact.SetCliente(dgvClientes.CurrentRow.Cells[1].Value.ToString(),
+                        dgvClientes.CurrentRow.Cells[2].Value.ToString());
+                    fact.Show();
+                    Close();
+                }
+            }
+        }
+
     }
 }

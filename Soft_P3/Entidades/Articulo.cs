@@ -7,7 +7,7 @@ using Soft_P3.Presentacion;
 
 namespace Soft_P3.Entidades
 {
-    class Articulo
+    public class Articulo
     {
         public int id;
         public string descArt;

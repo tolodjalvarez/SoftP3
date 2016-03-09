@@ -30,15 +30,15 @@ namespace Soft_P3.Datos
             SqlCommand sql = new SqlCommand("usp_Data_FCliente_Insert", conexion.ObtenerConexion());
             sql.CommandType = CommandType.StoredProcedure;
 
-            sql.Parameters.Add("@NombCliente", SqlDbType.VarChar, 100).Value = cliente.NombCliente;
-            sql.Parameters.Add("@ApelliCliente",SqlDbType.VarChar, 100).Value = cliente.ApelliCliente;
-            sql.Parameters.Add("@Telefono", SqlDbType.VarChar, 100).Value = cliente.Telefono;
-            sql.Parameters.Add("@Celular", SqlDbType.VarChar, 100).Value = cliente.Celular;
-            sql.Parameters.Add("@Email", SqlDbType.VarChar, 100).Value = cliente.Email;
-            sql.Parameters.Add("@Cedula", SqlDbType.VarChar, 100).Value = cliente.Cedula;
-            sql.Parameters.Add("@Direccion", SqlDbType.VarChar, 100).Value = cliente.Direccion;
-            sql.Parameters.Add("@Nacionalidad", SqlDbType.VarChar, 100).Value = cliente.Nacionalidad;
-            sql.Parameters.Add("@RNC", SqlDbType.VarChar, 100).Value = cliente.Rnc;
+            sql.Parameters.Add("@NombCliente", SqlDbType.VarChar, 0).Value = cliente.NombCliente;
+            sql.Parameters.Add("@ApelliCliente",SqlDbType.VarChar, 0).Value = cliente.ApelliCliente;
+            sql.Parameters.Add("@Telefono", SqlDbType.VarChar, 0).Value = cliente.Telefono;
+            sql.Parameters.Add("@Celular", SqlDbType.VarChar, 0).Value = cliente.Celular;
+            sql.Parameters.Add("@Email", SqlDbType.VarChar, 0).Value = cliente.Email;
+            sql.Parameters.Add("@Cedula", SqlDbType.VarChar, 0).Value = cliente.Cedula;
+            sql.Parameters.Add("@Direccion", SqlDbType.VarChar, 0).Value = cliente.Direccion;
+            sql.Parameters.Add("@Nacionalidad", SqlDbType.VarChar, 0).Value = cliente.Nacionalidad;
+            sql.Parameters.Add("@RNC", SqlDbType.VarChar, 0).Value = cliente.Rnc;
             sql.Parameters.Add("@Fecha", SqlDbType.DateTime, 0).Value=cliente.Fecha;
 
             try
@@ -54,19 +54,20 @@ namespace Soft_P3.Datos
         }
         public static int Actualizar(Cliente cliente)
         {
-            SqlCommand sql = new SqlCommand("usp_Data_FCategoria_Actualizar", conexion.ObtenerConexion());
+            SqlCommand sql = new SqlCommand("usp_Data_FCliente_Actualizar", conexion.ObtenerConexion());
             sql.CommandType = CommandType.StoredProcedure;
 
-            sql.Parameters.AddWithValue("@Id", cliente.Id);
-            sql.Parameters.AddWithValue("@Descripcion", cliente.NombCliente);
-            sql.Parameters.AddWithValue("@RNC", cliente.Rnc);
-            sql.Parameters.AddWithValue("@Telefono", cliente.Telefono);
-            sql.Parameters.AddWithValue("@Celular", cliente.Celular);
-            sql.Parameters.AddWithValue("@Email", cliente.Email);
-            sql.Parameters.AddWithValue("@Cedula", cliente.Cedula);
-            sql.Parameters.AddWithValue("@Direccion", cliente.Direccion);
-            sql.Parameters.AddWithValue("@Nacionalidad", cliente.Nacionalidad);
-            sql.Parameters.AddWithValue("@Fecha", cliente.Fecha);
+            sql.Parameters.AddWithValue("@IdClient", cliente.Id);
+            sql.Parameters.Add("@NombCliente", SqlDbType.VarChar, 0).Value = cliente.NombCliente;
+            sql.Parameters.Add("@ApelliCliente", SqlDbType.VarChar, 0).Value = cliente.ApelliCliente;
+            sql.Parameters.Add("@Telefono", SqlDbType.VarChar, 0).Value = cliente.Telefono;
+            sql.Parameters.Add("@Celular", SqlDbType.VarChar, 0).Value = cliente.Celular;
+            sql.Parameters.Add("@Email", SqlDbType.VarChar, 0).Value = cliente.Email;
+            sql.Parameters.Add("@Cedula", SqlDbType.VarChar, 0).Value = cliente.Cedula;
+            sql.Parameters.Add("@Direccion", SqlDbType.VarChar, 0).Value = cliente.Direccion;
+            sql.Parameters.Add("@Nacionalidad", SqlDbType.VarChar, 0).Value = cliente.Nacionalidad;
+            sql.Parameters.Add("@RNC", SqlDbType.VarChar, 0).Value = cliente.Rnc;
+            sql.Parameters.Add("@Fecha", SqlDbType.DateTime, 0).Value = cliente.Fecha;
 
             int resul = sql.ExecuteNonQuery();
             return Convert.ToInt32(resul > 0);
@@ -77,7 +78,7 @@ namespace Soft_P3.Datos
             SqlCommand sql = new SqlCommand("usp_Data_FCliente_Borrar");
             sql.CommandType = CommandType.StoredProcedure;
 
-            sql.Parameters.AddWithValue("@Id", cliente.Id);
+            sql.Parameters.AddWithValue("@IdClient", cliente.Id);
 
             int resul = sql.ExecuteNonQuery();
             return Convert.ToInt32(resul > 0);

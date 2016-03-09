@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Soft_P3.Entidades
 {
-    class Cliente
+    public class Cliente
     {
         private int id;
         private string  nombCliente;

@@ -76,10 +76,10 @@
             this.groupBox1.Controls.Add(this.dgvArticulos);
             this.groupBox1.Controls.Add(this.txtBuscarArti);
             this.groupBox1.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(13, 379);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(13, 377);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1511, 398);
+            this.groupBox1.Size = new System.Drawing.Size(1501, 409);
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de Articulos";
@@ -101,7 +101,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Aqua;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnEliminar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(1358, 35);
+            this.btnEliminar.Location = new System.Drawing.Point(1348, 35);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(143, 36);
             this.btnEliminar.TabIndex = 15;
@@ -120,11 +120,10 @@
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowTemplate.Height = 24;
-            this.dgvArticulos.Size = new System.Drawing.Size(1495, 318);
+            this.dgvArticulos.Size = new System.Drawing.Size(1485, 329);
             this.dgvArticulos.TabIndex = 4;
             this.dgvArticulos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellClick);
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
-            this.dgvArticulos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentDoubleClick);
             this.dgvArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellDoubleClick);
             // 
             // Eliminar
@@ -430,7 +429,7 @@
             // 
             this.dtFechaVencimiento.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaVencimiento.Location = new System.Drawing.Point(833, 224);
+            this.dtFechaVencimiento.Location = new System.Drawing.Point(833, 225);
             this.dtFechaVencimiento.Name = "dtFechaVencimiento";
             this.dtFechaVencimiento.Size = new System.Drawing.Size(190, 28);
             this.dtFechaVencimiento.TabIndex = 56;
@@ -528,6 +527,7 @@
             this.Controls.Add(this.txtCodArt);
             this.MaximizeBox = false;
             this.Name = "frmArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmArticulo";
             this.Load += new System.EventHandler(this.frmArticulo_Load);
             this.groupBox1.ResumeLayout(false);

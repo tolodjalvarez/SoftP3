@@ -113,6 +113,16 @@ namespace Soft_P3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pos_2 {
+            get {
+                object obj = ResourceManager.GetObject("pos-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_file_96px_1187344_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("search_file_96px_1187344_easyicon.net", resourceCulture);

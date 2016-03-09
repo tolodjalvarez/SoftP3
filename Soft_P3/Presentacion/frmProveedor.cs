@@ -191,7 +191,7 @@ namespace Soft_P3.Presentacion
                 frmArticulo Art = frmArticulo.GetInstance();
                 if (dgvProveedor.CurrentRow != null)
                 {
-                    Art.SetCategoria(dgvProveedor.CurrentRow.Cells[1].Value.ToString(),
+                    Art.SetProveedor(dgvProveedor.CurrentRow.Cells[1].Value.ToString(),
                         dgvProveedor.CurrentRow.Cells[2].Value.ToString());
                     Art.Show();
                     Close();

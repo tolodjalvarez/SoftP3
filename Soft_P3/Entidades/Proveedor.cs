@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Soft_P3.Entidades
 {
-    class Proveedor
+   public class Proveedor
     {
         private int id;
         private string nombre;
