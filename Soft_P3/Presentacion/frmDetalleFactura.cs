@@ -55,5 +55,35 @@ namespace Soft_P3.Presentacion
         {
 
         }
+
+        private void txtClieNom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtClieId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrecioVenta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
