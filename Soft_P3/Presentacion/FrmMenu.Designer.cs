@@ -389,7 +389,7 @@
             // 
             this.Desarrolladores.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Desarrolladores.Name = "Desarrolladores";
-            this.Desarrolladores.Size = new System.Drawing.Size(1042, 17);
+            this.Desarrolladores.Size = new System.Drawing.Size(1041, 17);
             this.Desarrolladores.Text = resources.GetString("Desarrolladores.Text");
             // 
             // FrmMenu
