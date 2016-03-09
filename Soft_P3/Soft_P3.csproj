@@ -59,6 +59,12 @@
     <Compile Include="Entidades\Proveedor.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Entidades\Venta.cs" />
+    <Compile Include="Presentacion\BuscarArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\BuscarArticulos.Designer.cs">
+      <DependentUpon>BuscarArticulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\BuscarArticulos.resx">
+      <DependentUpon>BuscarArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmArticulo.resx">
       <DependentUpon>frmArticulo.cs</DependentUpon>
     </EmbeddedResource>

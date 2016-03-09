@@ -33,9 +33,12 @@ namespace Soft_P3.Presentacion
         }
         private void btnBuscArt_Click(object sender, EventArgs e)
         {
-            frmArticulo frmArt = new frmArticulo();
-            frmArt.SetFlag("1");
-            frmArt.ShowDialog();
+
+            BuscarArticulos BA = new BuscarArticulos();
+            BA.Show();
+            //frmArticulo frmArt = new frmArticulo();
+            //frmArt.SetFlag("1");
+            //frmArt.ShowDialog();
         }
 
         internal void SetVenta(Venta venta)
@@ -46,6 +49,11 @@ namespace Soft_P3.Presentacion
             dtpFechaFactura.Text = venta.FechaFactura.ToLongDateString();
             cmbTipoPago.Text = venta.TipoPago;
             txtCFactura.Text = venta.NoFactura.ToString();
+        }
+
+        private void frmDetalleFactura_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
