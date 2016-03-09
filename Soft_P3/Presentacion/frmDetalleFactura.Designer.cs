@@ -103,6 +103,7 @@
             // 
             this.groupBox4.Controls.Add(this.btnEliminar);
             this.groupBox4.Controls.Add(this.dgvFactura);
+            this.groupBox4.Controls.Add(this.btnGuardar);
             this.groupBox4.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
             this.groupBox4.Location = new System.Drawing.Point(13, 347);
@@ -249,10 +250,10 @@
             this.btnGuardar.BackColor = System.Drawing.Color.Aqua;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnGuardar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(479, 249);
+            this.btnGuardar.Location = new System.Drawing.Point(753, 15);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(115, 54);
+            this.btnGuardar.Size = new System.Drawing.Size(115, 29);
             this.btnGuardar.TabIndex = 67;
             this.btnGuardar.Text = "Agregar Articulo";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -267,7 +268,6 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtCantidad);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.btnGuardar);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.btnBuscArt);
             this.groupBox2.Controls.Add(this.cmbTipoPago);
