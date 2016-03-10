@@ -87,5 +87,7 @@ namespace Soft_P3.Presentacion
         {
             this.abrirFormulario(new frmDetalleFactura());
         }
+
+        
     }
 }
