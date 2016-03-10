@@ -405,10 +405,10 @@
             this.btnBuscArt.BackColor = System.Drawing.Color.Aqua;
             this.btnBuscArt.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnBuscArt.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscArt.Location = new System.Drawing.Point(550, 164);
+            this.btnBuscArt.Location = new System.Drawing.Point(550, 165);
             this.btnBuscArt.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscArt.Name = "btnBuscArt";
-            this.btnBuscArt.Size = new System.Drawing.Size(65, 24);
+            this.btnBuscArt.Size = new System.Drawing.Size(65, 26);
             this.btnBuscArt.TabIndex = 62;
             this.btnBuscArt.Text = "Buscar";
             this.btnBuscArt.UseVisualStyleBackColor = false;
@@ -471,7 +471,7 @@
             this.btnBuscarCliente.Location = new System.Drawing.Point(550, 113);
             this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(65, 24);
+            this.btnBuscarCliente.Size = new System.Drawing.Size(65, 26);
             this.btnBuscarCliente.TabIndex = 76;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
