@@ -526,7 +526,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(6, 73);
+            this.label15.Location = new System.Drawing.Point(6, 74);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(114, 19);
             this.label15.TabIndex = 17;
