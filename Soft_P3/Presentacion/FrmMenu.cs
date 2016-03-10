@@ -83,7 +83,7 @@ namespace Soft_P3.Presentacion
             this.abrirFormulario(new frmUsuario());
         }
 
-        private void btnBilling_Click(object sender, EventArgs e)
+        private void mnuBilling_Click(object sender, EventArgs e)
         {
             this.abrirFormulario(new frmDetalleFactura());
         }
