@@ -30,15 +30,15 @@
         {
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUser
             // 
             this.txtUser.Font = new System.Drawing.Font("Bell MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(59, 247);
+            this.txtUser.Location = new System.Drawing.Point(59, 269);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(209, 29);
             this.txtUser.TabIndex = 0;
@@ -46,18 +46,10 @@
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Bell MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(59, 279);
+            this.txtPass.Location = new System.Drawing.Point(59, 301);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(209, 29);
             this.txtPass.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(59, 51);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(209, 162);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // btnLogin
             // 
@@ -71,6 +63,16 @@
             this.btnLogin.TabIndex = 3;
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Soft_P3.Properties.Resources.Archivo_000;
+            this.pictureBox1.Location = new System.Drawing.Point(59, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(209, 198);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 

@@ -153,6 +153,16 @@ namespace Soft_P3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Archivo_000 {
+            get {
+                object obj = ResourceManager.GetObject("Archivo_000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_87px_1199201_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("arrow_87px_1199201_easyicon.net", resourceCulture);
