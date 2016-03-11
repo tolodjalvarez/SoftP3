@@ -39,3 +39,4 @@ C:\Users\manuel\Documents\GitHub\SoftP3\Soft_P3\obj\Debug\Soft_P3.Presentacion.f
 C:\Users\manuel\Documents\GitHub\SoftP3\Soft_P3\obj\Debug\Soft_P3.Presentacion.frmUsuario.resources
 C:\Users\manuel\Documents\GitHub\SoftP3\Soft_P3\obj\Debug\Soft_P3.Properties.Resources.resources
 C:\Users\manuel\Documents\GitHub\SoftP3\Soft_P3\obj\Debug\Soft_P3.csproj.GenerateResource.Cache
+C:\Users\manuel\Documents\GitHub\SoftP3\Soft_P3\obj\Debug\Soft_P3.Presentacion.Login.resources

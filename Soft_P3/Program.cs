@@ -17,7 +17,7 @@ namespace Soft_P3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run( FrmMenu.GetInstance());
+            Application.Run( Login.GetInstance());
         }
     }
 }
