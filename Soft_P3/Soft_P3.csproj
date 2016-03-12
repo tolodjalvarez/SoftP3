@@ -48,7 +48,9 @@
     <Compile Include="Datos\Farticulo.cs" />
     <Compile Include="Datos\Fcategoria.cs" />
     <Compile Include="Datos\Fcliente.cs" />
+    <Compile Include="Datos\FDBHelper.cs" />
     <Compile Include="Datos\FdetalleVenta.cs" />
+    <Compile Include="Datos\FLogin.cs" />
     <Compile Include="Datos\Fproveedor.cs" />
     <Compile Include="Datos\Fusuario.cs" />
     <Compile Include="Datos\Fventa.cs" />

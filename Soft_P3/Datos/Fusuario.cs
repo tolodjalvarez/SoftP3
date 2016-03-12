@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Soft_P3.Datos
 {
     public class Fusuario
@@ -80,6 +81,50 @@ namespace Soft_P3.Datos
             return Convert.ToInt32(resul > 0);
 
 
+        }
+
+
+        public static void Login(Usuario usuario)
+        {
+
+            SqlCommand sqlLog = new SqlCommand("usp_Data_FLogin_ValidarLogin", conexion.ObtenerConexion());
+            sqlLog.CommandType = CommandType.StoredProcedure;
+
+            sqlLog.Parameters.AddWithValue("@Usuario", usuario.Usuario1);
+            sqlLog.Parameters.AddWithValue("@Password", usuario.Password);
+
+            SqlDataReader DR = sqlLog.ExecuteReader();
+
+            int count = 0;
+            int Try = 3;
+
+            while (DR.Read())
+            {
+                count += 1;
+            }
+
+            while (Try > 0)
+            {
+
+                int Inten = Try -= 1;
+                if (count == 1)
+                {
+                    MessageBox.Show("Bienvenido", "Usuario", MessageBoxButtons.OK);
+                    Presentacion.FrmMenu Fr = new Presentacion.FrmMenu();
+                    Fr.Show();
+                }
+                else
+                {
+
+                    if (Try == 0)
+                    {
+                        MessageBox.Show("Informacion incorrecta, le quedan " + Inten + " Intentos ", "Succes", MessageBoxButtons.OK);
+
+                    }
+
+                }
+            }
+          
         }
     }
 }

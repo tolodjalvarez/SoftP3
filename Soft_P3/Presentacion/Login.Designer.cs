@@ -48,6 +48,7 @@
             this.txtPass.Font = new System.Drawing.Font("Bell MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(59, 301);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = 'º';
             this.txtPass.Size = new System.Drawing.Size(209, 29);
             this.txtPass.TabIndex = 1;
             // 
@@ -67,15 +68,16 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Soft_P3.Properties.Resources.Archivo_000;
-            this.pictureBox1.Location = new System.Drawing.Point(59, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(59, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(209, 198);
+            this.pictureBox1.Size = new System.Drawing.Size(209, 172);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
@@ -87,6 +89,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

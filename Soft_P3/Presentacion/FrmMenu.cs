@@ -88,6 +88,16 @@ namespace Soft_P3.Presentacion
             this.abrirFormulario(new frmDetalleFactura());
         }
 
-        
+        private void mnuLogOff_Click(object sender, EventArgs e)
+        {
+            DialogResult Result = MessageBox.Show("Desea cerrar sesion?", "Confirmacion", MessageBoxButtons.OKCancel);
+            if(Result == DialogResult.OK)
+            {
+                this.Hide();
+                Login Lg = new Login();
+                Lg.Show();
+            }
+            
+        }
     }
 }

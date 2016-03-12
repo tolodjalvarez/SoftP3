@@ -32,6 +32,7 @@
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBilling = new System.Windows.Forms.ToolStripMenuItem();
             this.salesSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuLogOff = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExitFromSystem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,10 +45,10 @@
             this.compañiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRptInvioce = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuentasPorPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuentasPorCoprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuentasPorPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuentasPorCoprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuManage = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +63,6 @@
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.statMain = new System.Windows.Forms.StatusStrip();
             this.Desarrolladores = new System.Windows.Forms.ToolStripStatusLabel();
-            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.statMain.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,15 @@
             this.salesSeparator.Name = "salesSeparator";
             this.salesSeparator.Size = new System.Drawing.Size(185, 6);
             // 
+            // comprasToolStripMenuItem
+            // 
+            this.comprasToolStripMenuItem.Image = global::Soft_P3.Properties.Resources.basket;
+            this.comprasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.comprasToolStripMenuItem.Text = "Compras";
+            this.comprasToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
@@ -108,6 +117,7 @@
             this.mnuLogOff.Name = "mnuLogOff";
             this.mnuLogOff.Size = new System.Drawing.Size(188, 26);
             this.mnuLogOff.Text = "Cerrar Sesión";
+            this.mnuLogOff.Click += new System.EventHandler(this.mnuLogOff_Click);
             // 
             // mnuExitFromSystem
             // 
@@ -207,18 +217,6 @@
             this.mnuRptInvioce.Size = new System.Drawing.Size(211, 26);
             this.mnuRptInvioce.Text = "Facturas";
             // 
-            // cuentasPorPagarToolStripMenuItem
-            // 
-            this.cuentasPorPagarToolStripMenuItem.Name = "cuentasPorPagarToolStripMenuItem";
-            this.cuentasPorPagarToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
-            this.cuentasPorPagarToolStripMenuItem.Text = "Cuentas Por Pagar";
-            // 
-            // cuentasPorCoprarToolStripMenuItem
-            // 
-            this.cuentasPorCoprarToolStripMenuItem.Name = "cuentasPorCoprarToolStripMenuItem";
-            this.cuentasPorCoprarToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
-            this.cuentasPorCoprarToolStripMenuItem.Text = "Cuentas Por Cobrar";
-            // 
             // entradasToolStripMenuItem
             // 
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
@@ -230,6 +228,18 @@
             this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
             this.salidasToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.salidasToolStripMenuItem.Text = "Salidas";
+            // 
+            // cuentasPorPagarToolStripMenuItem
+            // 
+            this.cuentasPorPagarToolStripMenuItem.Name = "cuentasPorPagarToolStripMenuItem";
+            this.cuentasPorPagarToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.cuentasPorPagarToolStripMenuItem.Text = "Cuentas Por Pagar";
+            // 
+            // cuentasPorCoprarToolStripMenuItem
+            // 
+            this.cuentasPorCoprarToolStripMenuItem.Name = "cuentasPorCoprarToolStripMenuItem";
+            this.cuentasPorCoprarToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.cuentasPorCoprarToolStripMenuItem.Text = "Cuentas Por Cobrar";
             // 
             // mnuManage
             // 
@@ -245,7 +255,7 @@
             this.mnuUsers.Image = global::Soft_P3.Properties.Resources.user;
             this.mnuUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuUsers.Name = "mnuUsers";
-            this.mnuUsers.Size = new System.Drawing.Size(156, 26);
+            this.mnuUsers.Size = new System.Drawing.Size(139, 26);
             this.mnuUsers.Text = "Usuarios";
             this.mnuUsers.Click += new System.EventHandler(this.mnuUsers_Click);
             // 
@@ -355,15 +365,6 @@
             this.Desarrolladores.Name = "Desarrolladores";
             this.Desarrolladores.Size = new System.Drawing.Size(1041, 17);
             this.Desarrolladores.Text = resources.GetString("Desarrolladores.Text");
-            // 
-            // comprasToolStripMenuItem
-            // 
-            this.comprasToolStripMenuItem.Image = global::Soft_P3.Properties.Resources.basket;
-            this.comprasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
-            this.comprasToolStripMenuItem.Text = "Compras";
-            this.comprasToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FrmMenu
             // 
