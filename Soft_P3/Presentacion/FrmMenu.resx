@@ -120,13 +120,10 @@
   <metadata name="mnuMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="barMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>241, 14</value>
-  </metadata>
   <metadata name="statMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>354, 14</value>
   </metadata>
   <data name="Desarrolladores.Text" xml:space="preserve">
-    <value>Desarrollado por: Yilson Jimenez - Adrian Ventura - Orlando Bastita - Abimael Gustierez                                                                                                                              </value>
+    <value>Desarrollado por: Yilson Jimenez - Adrian Ventura - Orlando Batista - Abimael Gutierrez                                                                                                                              </value>
   </data>
 </root>

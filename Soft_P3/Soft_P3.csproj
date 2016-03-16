@@ -44,6 +44,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="conexion.cs" />
+    <Compile Include="Datos\Farticulo.cs" />
+    <Compile Include="Datos\Fcategoria.cs" />
+    <Compile Include="Datos\Fcliente.cs" />
+    <Compile Include="Datos\FDBHelper.cs" />
+    <Compile Include="Datos\FdetalleVenta.cs" />
+    <Compile Include="Datos\FLogin.cs" />
+    <Compile Include="Datos\Fproveedor.cs" />
+    <Compile Include="Datos\Fusuario.cs" />
+    <Compile Include="Datos\Fventa.cs" />
+    <Compile Include="Entidades\Articulo.cs" />
+    <Compile Include="Entidades\Categoria.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\DetalleVenta.cs" />
+    <Compile Include="Entidades\Proveedor.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entidades\Venta.cs" />
+    <Compile Include="Presentacion\BuscarArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\BuscarArticulos.Designer.cs">
+      <DependentUpon>BuscarArticulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +103,12 @@
     <Compile Include="Presentacion\frmCxP.Designer.cs">
       <DependentUpon>frmCxP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frmDetalleFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmDetalleFactura.Designer.cs">
+      <DependentUpon>frmDetalleFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,12 +120,6 @@
     </Compile>
     <Compile Include="Presentacion\frmFacturacion.Designer.cs">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\frmFacturaVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\frmFacturaVenta.Designer.cs">
-      <DependentUpon>frmFacturaVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmMenu.cs">
       <SubType>Form</SubType>
@@ -116,8 +139,17 @@
     <Compile Include="Presentacion\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\BuscarArticulos.resx">
+      <DependentUpon>BuscarArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmArticulo.resx">
       <DependentUpon>frmArticulo.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,14 +168,14 @@
     <EmbeddedResource Include="Presentacion\frmCxP.resx">
       <DependentUpon>frmCxP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmDetalleFactura.resx">
+      <DependentUpon>frmDetalleFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmEmpleado.resx">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmFacturacion.resx">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmFacturaVenta.resx">
-      <DependentUpon>frmFacturaVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
@@ -153,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -194,6 +229,621 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow_87px_1199201_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pos-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrative-docs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\advertising.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archives.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attibutes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bestseller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\billing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brainstorming.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collaboration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\communication.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consulting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\current-work.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delicious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-library.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\donate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drawings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\featured.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finished-work.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-for-job.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freelance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full-time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\future-projects.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graphic-design.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hire-me.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\illustration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\issue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightbulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limited-edition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milestone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my-account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\networking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\old-versions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order-149.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paypal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photography.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product-163.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product-design.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\project.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\publish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shipping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showreel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sitemap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\special-offer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suppliers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upcoming-work.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrative-docs1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\advertising1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archives1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attibutes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basket1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bestseller1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\billing1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brainstorming1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collaboration1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\communication1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consulting1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cost1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit-card1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\current-work1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customers1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cv1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\date1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delicious1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-library1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\donate1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drawings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\featured1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feed1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finished-work1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-for-job1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freelance1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full-time1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\future-projects1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graphic-design1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hire-me1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\illustration1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\issue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightbulb1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limited-edition1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milestone1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my-account1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\networking1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\old-versions1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order-192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment-card1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paypal1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photography1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product-193.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product-design1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\project1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\publish1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shipping1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showreel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-in1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-out1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-up1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sitemap1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\special-offer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suppliers1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ticket1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upcoming-work1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Archivo_000.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

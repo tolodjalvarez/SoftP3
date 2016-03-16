@@ -28,64 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dgvCategoria = new System.Windows.Forms.DataGridView();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtFlag = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Font = new System.Drawing.Font("Bell MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(235, 124);
+            this.groupBox1.Controls.Add(this.dgvCategoria);
+            this.groupBox1.Controls.Add(this.btnEliminar);
+            this.groupBox1.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(176, 101);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(455, 315);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(369, 298);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de Categorias";
             // 
-            // dataGridView1
+            // dgvCategoria
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 261);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvCategoria.AllowUserToAddRows = false;
+            this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Eliminar});
+            this.dgvCategoria.Location = new System.Drawing.Point(4, 39);
+            this.dgvCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCategoria.Name = "dgvCategoria";
+            this.dgvCategoria.ReadOnly = true;
+            this.dgvCategoria.RowTemplate.Height = 24;
+            this.dgvCategoria.Size = new System.Drawing.Size(362, 212);
+            this.dgvCategoria.TabIndex = 0;
+            this.dgvCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellClick);
+            this.dgvCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellContentClick);
+            this.dgvCategoria.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellDoubleClick);
             // 
-            // textBox1
+            // Eliminar
             // 
-            this.textBox1.Font = new System.Drawing.Font("Bell MT", 13.8F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(13, 150);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 28);
-            this.textBox1.TabIndex = 35;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bell MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.NullValue = false;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Aqua;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnEliminar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(260, 264);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(107, 29);
+            this.btnEliminar.TabIndex = 42;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(10, 122);
+            this.txtId.Multiline = true;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(162, 24);
+            this.txtId.TabIndex = 35;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(9, 122);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(7, 99);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 24);
+            this.label6.Size = new System.Drawing.Size(102, 19);
             this.label6.TabIndex = 34;
             this.label6.Text = "ID Categoria";
             // 
@@ -94,10 +131,9 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Bell MT", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(57, 9);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(43, 7);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(196, 42);
+            this.label12.Size = new System.Drawing.Size(155, 34);
             this.label12.TabIndex = 33;
             this.label12.Text = "Categorias";
             // 
@@ -106,128 +142,135 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(165, 94);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(160, 75);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 24);
+            this.label14.Size = new System.Drawing.Size(62, 19);
             this.label14.TabIndex = 45;
             this.label14.Text = "Buscar:";
             // 
-            // textBox12
+            // txtBuscar
             // 
-            this.textBox12.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox12.Location = new System.Drawing.Point(470, 88);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(220, 30);
-            this.textBox12.TabIndex = 44;
+            this.txtBuscar.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(250, 75);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(166, 25);
+            this.txtBuscar.TabIndex = 44;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             // 
-            // comboBox1
+            // btnCancelar
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Nombre",
-            "Cedula",
-            "RNC"});
-            this.comboBox1.Location = new System.Drawing.Point(255, 86);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 32);
-            this.comboBox1.TabIndex = 43;
-            this.comboBox1.Text = "Descripcion";
+            this.btnCancelar.BackColor = System.Drawing.Color.Aqua;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCancelar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(568, 365);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(107, 29);
+            this.btnCancelar.TabIndex = 42;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button5
+            // btnGuardar
             // 
-            this.button5.BackColor = System.Drawing.Color.Aqua;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button5.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(700, 403);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(143, 36);
-            this.button5.TabIndex = 42;
-            this.button5.Text = "Cancelar";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnGuardar.BackColor = System.Drawing.Color.Aqua;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnGuardar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(567, 291);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(107, 29);
+            this.btnGuardar.TabIndex = 41;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button4
+            // btnEditar
             // 
-            this.button4.BackColor = System.Drawing.Color.Aqua;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button4.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(700, 312);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(143, 36);
-            this.button4.TabIndex = 41;
-            this.button4.Text = "Guardar";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnEditar.BackColor = System.Drawing.Color.Aqua;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnEditar.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(568, 232);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(107, 29);
+            this.btnEditar.TabIndex = 40;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // button3
+            // btnNuevo
             // 
-            this.button3.BackColor = System.Drawing.Color.Aqua;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button3.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(700, 239);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 36);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Editar";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Aqua;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(700, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 36);
-            this.button2.TabIndex = 39;
-            this.button2.Text = "Nuevo";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnNuevo.BackColor = System.Drawing.Color.Aqua;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnNuevo.Font = new System.Drawing.Font("Bell MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(568, 158);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(107, 29);
+            this.btnNuevo.TabIndex = 39;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(9, 238);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(7, 193);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 24);
+            this.label10.Size = new System.Drawing.Size(95, 19);
             this.label10.TabIndex = 38;
             this.label10.Text = "Descripcion";
             // 
-            // textBox9
+            // txtDescripcion
             // 
-            this.textBox9.Font = new System.Drawing.Font("Bell MT", 13.8F, System.Drawing.FontStyle.Bold);
-            this.textBox9.Location = new System.Drawing.Point(13, 266);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(215, 34);
-            this.textBox9.TabIndex = 37;
+            this.txtDescripcion.Enabled = false;
+            this.txtDescripcion.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(10, 216);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(162, 25);
+            this.txtDescripcion.TabIndex = 37;
+            // 
+            // txtFlag
+            // 
+            this.txtFlag.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtFlag.Enabled = false;
+            this.txtFlag.Location = new System.Drawing.Point(318, 20);
+            this.txtFlag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFlag.Name = "txtFlag";
+            this.txtFlag.Size = new System.Drawing.Size(49, 20);
+            this.txtFlag.TabIndex = 46;
+            this.txtFlag.Visible = false;
             // 
             // frmCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(855, 452);
+            this.ClientSize = new System.Drawing.Size(685, 409);
+            this.Controls.Add(this.txtFlag);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtDescripcion);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mantenimiento Categoria";
+            this.Load += new System.EventHandler(this.frmCategoria_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,18 +279,20 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dgvCategoria;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
+        private System.Windows.Forms.TextBox txtFlag;
     }
 }

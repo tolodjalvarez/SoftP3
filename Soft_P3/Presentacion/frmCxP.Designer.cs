@@ -307,9 +307,9 @@
             this.label3.Location = new System.Drawing.Point(7, 143);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 24);
+            this.label3.Size = new System.Drawing.Size(98, 24);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Empresa";
+            this.label3.Text = "Compañia";
             // 
             // label1
             // 

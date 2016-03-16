@@ -32,7 +32,7 @@
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBilling = new System.Windows.Forms.ToolStripMenuItem();
             this.salesSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuUserChangePass0 = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuLogOff = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExitFromSystem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +45,8 @@
             this.compañiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRptInvioce = new System.Windows.Forms.ToolStripMenuItem();
+            this.entradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasPorPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasPorCoprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuManage = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,16 +61,9 @@
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelpTopics = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain = new System.Windows.Forms.MenuStrip();
-            this.barMain = new System.Windows.Forms.ToolStrip();
-            this.btnEntradas = new System.Windows.Forms.ToolStripButton();
-            this.btnSalidas = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnBilling = new System.Windows.Forms.ToolStripButton();
-            this.btnSearchProduct = new System.Windows.Forms.ToolStripButton();
             this.statMain = new System.Windows.Forms.StatusStrip();
             this.Desarrolladores = new System.Windows.Forms.ToolStripStatusLabel();
             this.mnuMain.SuspendLayout();
-            this.barMain.SuspendLayout();
             this.statMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,46 +72,59 @@
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuBilling,
             this.salesSeparator,
-            this.mnuUserChangePass0,
+            this.comprasToolStripMenuItem,
             this.toolStripMenuItem2,
             this.mnuLogOff,
             this.mnuExitFromSystem});
+            this.mnuFile.Image = global::Soft_P3.Properties.Resources.home;
+            this.mnuFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuFile.Name = "mnuFile";
-            this.mnuFile.Size = new System.Drawing.Size(70, 28);
+            this.mnuFile.Size = new System.Drawing.Size(78, 24);
             this.mnuFile.Text = "Inicio";
             // 
             // mnuBilling
             // 
+            this.mnuBilling.Image = global::Soft_P3.Properties.Resources.pos_2;
+            this.mnuBilling.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuBilling.Name = "mnuBilling";
-            this.mnuBilling.Size = new System.Drawing.Size(263, 28);
+            this.mnuBilling.Size = new System.Drawing.Size(188, 26);
             this.mnuBilling.Text = "Facturación";
+            this.mnuBilling.Click += new System.EventHandler(this.mnuBilling_Click);
             // 
             // salesSeparator
             // 
             this.salesSeparator.Name = "salesSeparator";
-            this.salesSeparator.Size = new System.Drawing.Size(260, 6);
+            this.salesSeparator.Size = new System.Drawing.Size(185, 6);
             // 
-            // mnuUserChangePass0
+            // comprasToolStripMenuItem
             // 
-            this.mnuUserChangePass0.Name = "mnuUserChangePass0";
-            this.mnuUserChangePass0.Size = new System.Drawing.Size(263, 28);
-            this.mnuUserChangePass0.Text = "Cambiar mi contraseña";
+            this.comprasToolStripMenuItem.Image = global::Soft_P3.Properties.Resources.basket;
+            this.comprasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.comprasToolStripMenuItem.Text = "Compras";
+            this.comprasToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(260, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(185, 6);
             // 
             // mnuLogOff
             // 
+            this.mnuLogOff.Image = global::Soft_P3.Properties.Resources.logout;
+            this.mnuLogOff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuLogOff.Name = "mnuLogOff";
-            this.mnuLogOff.Size = new System.Drawing.Size(263, 28);
+            this.mnuLogOff.Size = new System.Drawing.Size(188, 26);
             this.mnuLogOff.Text = "Cerrar Sesión";
+            this.mnuLogOff.Click += new System.EventHandler(this.mnuLogOff_Click);
             // 
             // mnuExitFromSystem
             // 
+            this.mnuExitFromSystem.Image = global::Soft_P3.Properties.Resources.exit_96_192px_1143852_easyicon_net;
+            this.mnuExitFromSystem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuExitFromSystem.Name = "mnuExitFromSystem";
-            this.mnuExitFromSystem.Size = new System.Drawing.Size(263, 28);
+            this.mnuExitFromSystem.Size = new System.Drawing.Size(188, 26);
             this.mnuExitFromSystem.Text = "Salir del Sistema";
             // 
             // mnuCatalog
@@ -128,100 +136,142 @@
             this.empleadosToolStripMenuItem,
             this.categoriaToolStripMenuItem,
             this.compañiaToolStripMenuItem});
+            this.mnuCatalog.Image = global::Soft_P3.Properties.Resources.folder;
+            this.mnuCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuCatalog.Name = "mnuCatalog";
-            this.mnuCatalog.Size = new System.Drawing.Size(98, 27);
+            this.mnuCatalog.Size = new System.Drawing.Size(105, 24);
             this.mnuCatalog.Text = "&Catálogos";
             // 
             // mnuCatProduct
             // 
+            this.mnuCatProduct.Image = global::Soft_P3.Properties.Resources.product;
+            this.mnuCatProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuCatProduct.Name = "mnuCatProduct";
-            this.mnuCatProduct.Size = new System.Drawing.Size(181, 28);
+            this.mnuCatProduct.Size = new System.Drawing.Size(162, 26);
             this.mnuCatProduct.Text = "Articulos";
+            this.mnuCatProduct.Click += new System.EventHandler(this.mnuCatProduct_Click);
             // 
             // mnuCatClient
             // 
+            this.mnuCatClient.Image = global::Soft_P3.Properties.Resources.customers;
             this.mnuCatClient.Name = "mnuCatClient";
-            this.mnuCatClient.Size = new System.Drawing.Size(181, 28);
+            this.mnuCatClient.Size = new System.Drawing.Size(162, 26);
             this.mnuCatClient.Text = "Clientes";
+            this.mnuCatClient.Click += new System.EventHandler(this.mnuCatClient_Click);
             // 
             // mnuCatProvider
             // 
+            this.mnuCatProvider.Image = global::Soft_P3.Properties.Resources.suppliers;
+            this.mnuCatProvider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuCatProvider.Name = "mnuCatProvider";
-            this.mnuCatProvider.Size = new System.Drawing.Size(181, 28);
+            this.mnuCatProvider.Size = new System.Drawing.Size(162, 26);
             this.mnuCatProvider.Text = "Proveedores";
+            this.mnuCatProvider.Click += new System.EventHandler(this.mnuCatProvider_Click);
             // 
             // empleadosToolStripMenuItem
             // 
+            this.empleadosToolStripMenuItem.Image = global::Soft_P3.Properties.Resources.hire_me;
+            this.empleadosToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(181, 28);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.empleadosToolStripMenuItem.Text = "Empleados";
+            this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
             // 
             // categoriaToolStripMenuItem
             // 
+            this.categoriaToolStripMenuItem.Image = global::Soft_P3.Properties.Resources.category;
+            this.categoriaToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(181, 28);
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.categoriaToolStripMenuItem.Text = "Categoria";
+            this.categoriaToolStripMenuItem.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
             // 
             // compañiaToolStripMenuItem
             // 
+            this.compañiaToolStripMenuItem.Image = global::Soft_P3.Properties.Resources.library;
+            this.compañiaToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.compañiaToolStripMenuItem.Name = "compañiaToolStripMenuItem";
-            this.compañiaToolStripMenuItem.Size = new System.Drawing.Size(181, 28);
+            this.compañiaToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.compañiaToolStripMenuItem.Text = "Compañia";
+            this.compañiaToolStripMenuItem.Click += new System.EventHandler(this.compañiaToolStripMenuItem_Click);
             // 
             // mnuReports
             // 
             this.mnuReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuRptInvioce,
+            this.entradasToolStripMenuItem,
+            this.salidasToolStripMenuItem,
             this.cuentasPorPagarToolStripMenuItem,
             this.cuentasPorCoprarToolStripMenuItem});
+            this.mnuReports.Image = global::Soft_P3.Properties.Resources.publish;
+            this.mnuReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuReports.Name = "mnuReports";
-            this.mnuReports.Size = new System.Drawing.Size(90, 27);
+            this.mnuReports.Size = new System.Drawing.Size(99, 24);
             this.mnuReports.Text = "&Reportes";
             // 
             // mnuRptInvioce
             // 
+            this.mnuRptInvioce.Image = global::Soft_P3.Properties.Resources.bill_factura_invoice_72px_3656_easyicon_net;
+            this.mnuRptInvioce.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuRptInvioce.Name = "mnuRptInvioce";
-            this.mnuRptInvioce.Size = new System.Drawing.Size(235, 28);
+            this.mnuRptInvioce.Size = new System.Drawing.Size(211, 26);
             this.mnuRptInvioce.Text = "Facturas";
+            // 
+            // entradasToolStripMenuItem
+            // 
+            this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.entradasToolStripMenuItem.Text = "Entradas";
+            // 
+            // salidasToolStripMenuItem
+            // 
+            this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
+            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.salidasToolStripMenuItem.Text = "Salidas";
             // 
             // cuentasPorPagarToolStripMenuItem
             // 
             this.cuentasPorPagarToolStripMenuItem.Name = "cuentasPorPagarToolStripMenuItem";
-            this.cuentasPorPagarToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
+            this.cuentasPorPagarToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.cuentasPorPagarToolStripMenuItem.Text = "Cuentas Por Pagar";
             // 
             // cuentasPorCoprarToolStripMenuItem
             // 
             this.cuentasPorCoprarToolStripMenuItem.Name = "cuentasPorCoprarToolStripMenuItem";
-            this.cuentasPorCoprarToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
+            this.cuentasPorCoprarToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.cuentasPorCoprarToolStripMenuItem.Text = "Cuentas Por Cobrar";
             // 
             // mnuManage
             // 
             this.mnuManage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuUsers});
+            this.mnuManage.Image = global::Soft_P3.Properties.Resources.administrative_docs;
             this.mnuManage.Name = "mnuManage";
-            this.mnuManage.Size = new System.Drawing.Size(110, 27);
+            this.mnuManage.Size = new System.Drawing.Size(118, 24);
             this.mnuManage.Text = "Ad&ministrar";
             // 
             // mnuUsers
             // 
+            this.mnuUsers.Image = global::Soft_P3.Properties.Resources.user;
+            this.mnuUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuUsers.Name = "mnuUsers";
-            this.mnuUsers.Size = new System.Drawing.Size(151, 28);
+            this.mnuUsers.Size = new System.Drawing.Size(139, 26);
             this.mnuUsers.Text = "Usuarios";
+            this.mnuUsers.Click += new System.EventHandler(this.mnuUsers_Click);
             // 
             // mnuOptions
             // 
             this.mnuOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuUserChangePass1});
+            this.mnuOptions.Image = global::Soft_P3.Properties.Resources.settings;
             this.mnuOptions.Name = "mnuOptions";
-            this.mnuOptions.Size = new System.Drawing.Size(93, 27);
+            this.mnuOptions.Size = new System.Drawing.Size(101, 24);
             this.mnuOptions.Text = "Opciones";
             // 
             // mnuUserChangePass1
             // 
             this.mnuUserChangePass1.Name = "mnuUserChangePass1";
-            this.mnuUserChangePass1.Size = new System.Drawing.Size(263, 28);
+            this.mnuUserChangePass1.Size = new System.Drawing.Size(226, 24);
             this.mnuUserChangePass1.Text = "Cambiar mi contraseña";
             // 
             // mnuWindow
@@ -231,25 +281,25 @@
             this.mnuWindowHorizontal,
             this.mnuWindowVertical});
             this.mnuWindow.Name = "mnuWindow";
-            this.mnuWindow.Size = new System.Drawing.Size(85, 27);
+            this.mnuWindow.Size = new System.Drawing.Size(74, 24);
             this.mnuWindow.Text = "&Ventana";
             // 
             // mnuWindowCascade
             // 
             this.mnuWindowCascade.Name = "mnuWindowCascade";
-            this.mnuWindowCascade.Size = new System.Drawing.Size(265, 28);
+            this.mnuWindowCascade.Size = new System.Drawing.Size(230, 24);
             this.mnuWindowCascade.Text = "Ventanas en Cascada";
             // 
             // mnuWindowHorizontal
             // 
             this.mnuWindowHorizontal.Name = "mnuWindowHorizontal";
-            this.mnuWindowHorizontal.Size = new System.Drawing.Size(265, 28);
+            this.mnuWindowHorizontal.Size = new System.Drawing.Size(230, 24);
             this.mnuWindowHorizontal.Text = "Ventanas en Horizontal";
             // 
             // mnuWindowVertical
             // 
             this.mnuWindowVertical.Name = "mnuWindowVertical";
-            this.mnuWindowVertical.Size = new System.Drawing.Size(265, 28);
+            this.mnuWindowVertical.Size = new System.Drawing.Size(230, 24);
             this.mnuWindowVertical.Text = "Ventanas en Vertical";
             // 
             // mnuHelp
@@ -257,20 +307,22 @@
             this.mnuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuAbout,
             this.mnuHelpTopics});
+            this.mnuHelp.Image = global::Soft_P3.Properties.Resources.consulting;
+            this.mnuHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnuHelp.Name = "mnuHelp";
-            this.mnuHelp.Size = new System.Drawing.Size(71, 27);
+            this.mnuHelp.Size = new System.Drawing.Size(82, 24);
             this.mnuHelp.Text = "A&yuda";
             // 
             // mnuAbout
             // 
             this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(211, 28);
+            this.mnuAbout.Size = new System.Drawing.Size(185, 24);
             this.mnuAbout.Text = "Acerca de...";
             // 
             // mnuHelpTopics
             // 
             this.mnuHelpTopics.Name = "mnuHelpTopics";
-            this.mnuHelpTopics.Size = new System.Drawing.Size(211, 28);
+            this.mnuHelpTopics.Size = new System.Drawing.Size(185, 24);
             this.mnuHelpTopics.Text = "Temas de Ayuda";
             // 
             // mnuMain
@@ -288,74 +340,9 @@
             this.mnuHelp});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.mnuMain.Size = new System.Drawing.Size(1026, 32);
+            this.mnuMain.Size = new System.Drawing.Size(770, 28);
             this.mnuMain.TabIndex = 2;
             this.mnuMain.Text = "menuStrip1";
-            // 
-            // barMain
-            // 
-            this.barMain.BackColor = System.Drawing.SystemColors.GrayText;
-            this.barMain.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barMain.ImageScalingSize = new System.Drawing.Size(48, 48);
-            this.barMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnEntradas,
-            this.btnSalidas,
-            this.toolStripSeparator1,
-            this.btnBilling,
-            this.btnSearchProduct});
-            this.barMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.barMain.Location = new System.Drawing.Point(0, 32);
-            this.barMain.Name = "barMain";
-            this.barMain.Size = new System.Drawing.Size(1026, 79);
-            this.barMain.TabIndex = 4;
-            this.barMain.Text = "toolStrip1";
-            // 
-            // btnEntradas
-            // 
-            this.btnEntradas.ForeColor = System.Drawing.Color.White;
-            this.btnEntradas.Image = global::Soft_P3.Properties.Resources.arrow_87px_1199202_easyicon_net;
-            this.btnEntradas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEntradas.Name = "btnEntradas";
-            this.btnEntradas.Size = new System.Drawing.Size(93, 76);
-            this.btnEntradas.Text = "Entradas";
-            this.btnEntradas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // btnSalidas
-            // 
-            this.btnSalidas.ForeColor = System.Drawing.Color.White;
-            this.btnSalidas.Image = global::Soft_P3.Properties.Resources.arrow_87px_1199201_easyicon_net;
-            this.btnSalidas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalidas.Name = "btnSalidas";
-            this.btnSalidas.Size = new System.Drawing.Size(76, 76);
-            this.btnSalidas.Text = "Salidas";
-            this.btnSalidas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
-            // 
-            // btnBilling
-            // 
-            this.btnBilling.ForeColor = System.Drawing.Color.White;
-            this.btnBilling.Image = global::Soft_P3.Properties.Resources.bill_factura_invoice_72px_3656_easyicon_net;
-            this.btnBilling.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBilling.Name = "btnBilling";
-            this.btnBilling.Size = new System.Drawing.Size(119, 76);
-            this.btnBilling.Text = "Facturación";
-            this.btnBilling.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnBilling.Click += new System.EventHandler(this.btnBilling_Click);
-            // 
-            // btnSearchProduct
-            // 
-            this.btnSearchProduct.ForeColor = System.Drawing.Color.White;
-            this.btnSearchProduct.Image = global::Soft_P3.Properties.Resources.search_file_96px_1187344_easyicon_net;
-            this.btnSearchProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSearchProduct.Name = "btnSearchProduct";
-            this.btnSearchProduct.Size = new System.Drawing.Size(168, 76);
-            this.btnSearchProduct.Text = "Buscar Productos";
-            this.btnSearchProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // statMain
             // 
@@ -366,10 +353,9 @@
             this.statMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Desarrolladores});
             this.statMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.statMain.Location = new System.Drawing.Point(0, 481);
+            this.statMain.Location = new System.Drawing.Point(0, 392);
             this.statMain.Name = "statMain";
-            this.statMain.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statMain.Size = new System.Drawing.Size(1026, 28);
+            this.statMain.Size = new System.Drawing.Size(770, 22);
             this.statMain.TabIndex = 6;
             this.statMain.Text = "statusStrip1";
             // 
@@ -377,24 +363,26 @@
             // 
             this.Desarrolladores.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Desarrolladores.Name = "Desarrolladores";
-            this.Desarrolladores.Size = new System.Drawing.Size(1311, 23);
+            this.Desarrolladores.Size = new System.Drawing.Size(1041, 17);
             this.Desarrolladores.Text = resources.GetString("Desarrolladores.Text");
             // 
             // FrmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(1026, 509);
+            this.ClientSize = new System.Drawing.Size(770, 414);
             this.Controls.Add(this.statMain);
-            this.Controls.Add(this.barMain);
             this.Controls.Add(this.mnuMain);
+            this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
-            this.barMain.ResumeLayout(false);
-            this.barMain.PerformLayout();
             this.statMain.ResumeLayout(false);
             this.statMain.PerformLayout();
             this.ResumeLayout(false);
@@ -407,7 +395,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFile;
         private System.Windows.Forms.ToolStripMenuItem mnuBilling;
         private System.Windows.Forms.ToolStripSeparator salesSeparator;
-        private System.Windows.Forms.ToolStripMenuItem mnuUserChangePass0;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem mnuLogOff;
         private System.Windows.Forms.ToolStripMenuItem mnuExitFromSystem;
@@ -434,15 +421,10 @@
         private System.Windows.Forms.ToolStripMenuItem mnuAbout;
         private System.Windows.Forms.ToolStripMenuItem mnuHelpTopics;
         private System.Windows.Forms.MenuStrip mnuMain;
-        private System.Windows.Forms.ToolStrip barMain;
-        private System.Windows.Forms.ToolStripButton btnEntradas;
-        private System.Windows.Forms.ToolStripButton btnSalidas;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton btnBilling;
-        private System.Windows.Forms.ToolStripButton btnSearchProduct;
         private System.Windows.Forms.StatusStrip statMain;
         private System.Windows.Forms.ToolStripStatusLabel Desarrolladores;
-
-
+        private System.Windows.Forms.ToolStripMenuItem entradasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salidasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
     }
 }
